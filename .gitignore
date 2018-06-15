@@ -1,4 +1,5 @@
-*
-!bitrix/*
-!bitrix/templates/*
-/*.php
+/*
+!/bitrix
+/bitrix/*
+!/bitrix/templates
+!/*.php
