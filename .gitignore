@@ -1,5 +1,4 @@
 *
-.gitignore
+!bitrix/*
 !bitrix/templates/*
-!bitrix/*.php
-!/*.php
+/*.php
