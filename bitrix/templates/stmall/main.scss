@@ -1,0 +1,16 @@
+@mixin align-items($pos){
+  -moz-align-items: $pos;
+  -webkit-align-items: $pos;
+  -ms-align-items: $pos;
+  align-items: $pos;
+}
+@mixin border-radius($rad){
+  -moz-border-radius: $rad;
+  -webkit-border-radius: $rad;
+  -ms-border-radius: $rad;
+  border-radius: $rad;
+}
+
+@import 'template_styles';
+@import 'blog';
+@import 'adaptive';

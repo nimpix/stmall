@@ -1,0 +1,23 @@
+.fitness-h1{
+    text-transform: uppercase;
+    color:var(--color-main);
+    font:26px "CorbelBold";
+}
+.news-finded{
+    font:23px "RobotolRegular";
+    color:#000000;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    width:100%;
+    float:left;
+}
+.news-sorted{width:100%;float:left;}
+#soc-share,.soc-repost{display: inline-block;}
+.soc-repost{
+  position: relative;
+  top: 10px;
+  left: 5px;
+}
+.news-blog{
+  margin-bottom: 150px;;
+}
