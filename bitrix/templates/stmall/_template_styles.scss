@@ -3228,7 +3228,7 @@ input[data-entity="basket-filter-input"] {
 
 .form-1, .form-2, .form-3 {
   width: 300px;
-  height: 260px;
+  height: 330px;
   position: fixed;
   left: 50%;
   border: 1px solid #55d244;
@@ -3712,4 +3712,21 @@ div[data-entity="basket-total-block"] {
   left: 0px;
 }
 
+.form-title{
+  color: #FFF;
+  font-family: "CorbelBold";
+  font-size: 25px;
+  margin-bottom: 15px;
+}
 
+.politic-group{
+  & input{
+    height:15px !important;
+    width:15px !important;
+  }
+  & span{
+    & a{
+
+    }
+  }
+}

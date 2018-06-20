@@ -18,6 +18,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 ***********************************************************************************/
 ?>
 <div class="form-table data-table">
+    <div class="form-title">Закажите звонок</div>
     <button id="form-close">x</button>
     <div class="form-group">
 	<?
@@ -57,7 +58,9 @@ if($arResult["isUseCaptcha"] == "Y")
 <?
 } // isUseCaptcha
 ?>
-
+    <div class="politic-group">
+        <input type="checkbox" checked><span>С <a href="politics">политикой</a> обработки персональных данных ознакомлен</span>
+    </div>
 	<div class="button-group">
 
 				<input <?=(intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : "");?> type="submit" name="web_form_submit" value="Отправить" />
