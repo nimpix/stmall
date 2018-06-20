@@ -16,6 +16,14 @@ $arUrlRewrite=array (
     'PATH' => '/landing/pub/site/index.php',
     'SORT' => 100,
   ),
+  7 => 
+  array (
+    'CONDITION' => '#^/lp/pub/site/#',
+    'RULE' => NULL,
+    'ID' => 'bitrix:landing.pub',
+    'PATH' => '/lp/pub/site/index.php',
+    'SORT' => 100,
+  ),
   1 => 
   array (
     'CONDITION' => '#^/catalog/#',
@@ -38,14 +46,6 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/news/index.php',
-    'SORT' => 100,
-  ),
-  4 => 
-  array (
-    'CONDITION' => '#^#',
-    'RULE' => '',
-    'ID' => 'bitrix:form',
-    'PATH' => '/bitrix/templates/stmall/header.php',
     'SORT' => 100,
   ),
   5 => 

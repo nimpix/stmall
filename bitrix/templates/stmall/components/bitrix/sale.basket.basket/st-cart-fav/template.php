@@ -266,16 +266,59 @@ else
 }
 ?>
 <script>
+  function Refresh(){
+    clearInterval(timerCount);
+    $('.basket-items-list-wrapper').remove();
+    $('.favor>.row:first-child').addClass('justify-content-center').append('<p><font class="errortext2"><font></p>');
+    $('.errortext2').text('Ваш список избранного пуст');
+    if ($('.errortext2').text() == "Ваша корзина пуста") $('.errortext').text("Ваш список избранного пуст");
+    $('.errortext2').wrap('<div class="error-wrap"></div>');
+    $('.cart-container .error-wrap').parent().addClass('fav-p');
+    $('.error-wrap').append('<span>Подберите что-нибудь подходящее в каталоге</span>')
+    $('.error-wrap').append('<button class="go-back-cat">Перейти в каталог</button>')
 
-  let items = $('.basket-item-block-info');
-  var itcountzero = $(".basket-items-list-item-warning-container").length;
-  // $('.favor').append('<div id="wcount"></div>');
+    $('.go-back-cat').click(() => {
+      location.href = 'http://st-mall.ru/catalog/';
+    });
+  }
 
+  function minusCount(){
+    let count = $('#fav-count');
+    let countText = count.text();
+    count.text(countText-1);
+  }
+  function plusCart(){
+    let count = $('#cart-count');
+    let countText = parseInt(count.val());
+    let countTextNew =  $('.cart-count');
+    console.log(countText);
+    countTextNew.text(countText+1);
+  }
+
+  function summ(price){
+
+    let currentPrice = $('.cart-price').text();
+    let newSumm;
+    currentPrice = currentPrice.replace(/\s/g,"");
+    currentPrice = currentPrice.replace(/р./g,"");
+    currentPrice = parseInt(currentPrice);
+
+    price = price.replace(/\s/g, "");
+    price = price.replace(/руб./g, "");
+    price = parseInt(price);
+    newSumm = price+currentPrice;
+    $('.cart-price').text(newSumm+" р.");
+  }
+
+
+
+ var itcountzero = $(".basket-items-list-item-warning-container").length, endCart = false;
 
   var timerDelete = setInterval(function () {
-    $.each(items,function(){
-      if($(this).find('.basket-items-list-item-warning-container').length == 0){
-        hideEl = "#"+$(this).parent().parent().parent()[0].id;
+    let items = $('.basket-item-block-info');
+    $.each(items, function () {
+      if ($(this).find('.basket-items-list-item-warning-container').length == 0) {
+        hideEl = "#" + $(this).parent().parent().parent()[0].id;
         $(hideEl).remove();
       }
     });
@@ -283,24 +326,56 @@ else
   },100);
 
   var timerCount =setInterval(function(){
-    var itcount = $(".basket-items-list-item-warning-container").length;
-    $('#fav-count').text(itcount);
-    if(itcountzero == 0){
+    let itcount = $("#basket-item-table .basket-items-list-item-container").length;
+    if($('#basket-item-table .basket-items-list-item-container-expend').length == 1) $('.basket-items-list-item-container-expend').remove();
 
+    if(itcountzero == 0 || itcount == 0){
+      endCart = true;
+
+      Refresh();
     }
-    else if(itcount == 0) {
-      setTimeout(function () {
-        clearInterval(timerCount); location.reload();
-      },200);
+  },10);
+
+    window.onload = function(){
+  //Делаем удаление избранных фикс 18 версии сука
+   var butDel = $(".basket-items-list-item-warning-container").parent().parent().parent().parent().find('.basket-items-list-item-remove .basket-item-block-actions span');
+
+   butDel.click(function(){
+     let id = $(this).parent().parent().parent().data('id');
+     $.ajax({
+       method: "POST",
+       url: "/bitrix/templates/stmall/deleteFavor.php",
+       data:{
+         id:id
+       },
+       dataType: "json",
+       success: function(data) {
+        // console.log(data['id']);
+       },
+       error: function(xhr, textStatus) {
+         //console.log([xhr.status, textStatus]);
+       }
+     });
+
+     minusCount();
+
+   });
+
+      $('.basket-items-list-item-warning-container a[data-entity="basket-item-remove-delayed"]').click(function(){
+        let price = $(this).parent().parent().parent().parent().parent().parent().find('span[id *= "basket-item-sum-price"]').text();
+        let delParent = $(this).parent().parent().parent().parent().parent().parent();
+
+         delParent.hide();
+
+
+
+        minusCount();
+        plusCart();
+        summ(price);
+      });
     }
 
-  },100);
 
-  if(itcountzero == 0){
-    clearInterval(timerCount);
-    $('.basket-items-list-wrapper').remove();
-    $('.favor>.row:first-child').append('<p><font class="errortext2"><font></p>');
-    $('.errortext2').text('Ваш список избранного пуст');
-  }
-  //
+
+
 </script>

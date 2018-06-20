@@ -3370,7 +3370,6 @@ form[name='variant_form'] {
 }
 
 #bx-soa-orderSave a, .bx-soa-more-btn a {
-  background: var(--salat) !important;
   border: none !important;
   outline: none !important;
 }
@@ -3383,6 +3382,10 @@ form[name='variant_form'] {
   width: 100%;
   padding-right: 10px;
   padding-bottom: 40px;
+  & input[type='checkbox']{
+    margin-left:0px;
+    margin-top:10px;
+  }
 }
 
 #bx-soa-total {
@@ -3616,6 +3619,8 @@ button[data-entity="basket-checkout-button"] {
 #bx-soa-orderSave a, .bx-soa-more-btn a {
   padding: 5px 20px;
   font-size: 12px;
+  display:block;
+  line-height:20px;
 }
 
 .politics ul {

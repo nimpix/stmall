@@ -2,4 +2,5 @@
 !/bitrix
 /bitrix/*
 !/bitrix/templates
+!/bitrix/components
 !/*.php

@@ -13,7 +13,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <? $APPLICATION->ShowHead();
-    $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/styles.css");
+    $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/style.css");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-1.11.1.min.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/script.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/timer.js");
@@ -255,7 +255,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                         <span class="mobile-icon"></span>
                         <a href="tel:+74950217733" class="phone">8 (495) 021-77-33</a>
                     </div>
-                    <div class="col-lg-auto text-md-center ml-auto">
+                    <div class="col-lg-auto text-md-center col-md-9 ml-auto">
                         <ul class="mk-menu">
                             <li><a href="/dostavka-i-oplata">Доставка и оплата</a></li>
                             <li><a href="/kak-sdelat-zakaz">Как сделать заказ</a></li>
@@ -333,30 +333,31 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                 <!--                    <span></span>-->
                 <!--                    <span><div class="cart-count">0</div></span>-->
                 <? $APPLICATION->IncludeComponent(
-                    "adamant:sale.basket.basket.line",
-                    "my_basket",
-                    array(
-                        "PATH_TO_BASKET" => SITE_DIR."cart/",
-                        "PATH_TO_PERSONAL" => SITE_DIR."profile/",
-                        "SHOW_PERSONAL_LINK" => "N",
-                        "SHOW_NUM_PRODUCTS" => "Y",
-                        "SHOW_TOTAL_PRICE" => "Y",
-                        "SHOW_PRODUCTS" => "N",
-                        "POSITION_FIXED" => "N",
-                        "POSITION_HORIZONTAL" => "center",
-                        "POSITION_VERTICAL" => "bottom",
-                        "SHOW_AUTHOR" => "N",
-                        "PATH_TO_REGISTER" => SITE_DIR."registration/",
-                        "PATH_TO_PROFILE" => SITE_DIR."profile/",
-                        "COMPONENT_TEMPLATE" => "my_basket",
-                        "SHOW_EMPTY_VALUES" => "Y",
-                        "PATH_TO_ORDER" => SITE_DIR."/order/",
-                        "PATH_TO_AUTHORIZE" => "",
-                        "HIDE_ON_BASKET_PAGES" => "N",
-                        "SHOW_DELAY" => "N",
-                    ),
-                    false
-                ); ?>
+	"bitrix:sale.basket.basket.line", 
+	"my_basket", 
+	array(
+		"PATH_TO_BASKET" => SITE_DIR."cart/",
+		"PATH_TO_PERSONAL" => SITE_DIR."profile/",
+		"SHOW_PERSONAL_LINK" => "N",
+		"SHOW_NUM_PRODUCTS" => "Y",
+		"SHOW_TOTAL_PRICE" => "Y",
+		"SHOW_PRODUCTS" => "N",
+		"POSITION_FIXED" => "N",
+		"POSITION_HORIZONTAL" => "center",
+		"POSITION_VERTICAL" => "bottom",
+		"SHOW_AUTHOR" => "N",
+		"PATH_TO_REGISTER" => SITE_DIR."registration/",
+		"PATH_TO_PROFILE" => SITE_DIR."profile/",
+		"COMPONENT_TEMPLATE" => "my_basket",
+		"SHOW_EMPTY_VALUES" => "Y",
+		"PATH_TO_ORDER" => SITE_DIR."/order/",
+		"PATH_TO_AUTHORIZE" => "",
+		"HIDE_ON_BASKET_PAGES" => "Y",
+		"SHOW_DELAY" => "N",
+		"SHOW_REGISTRATION" => "Y"
+	),
+	false
+); ?>
                 <!--                </div>-->
                 <!--                -->
                 <!--                <div class="cart-text">-->

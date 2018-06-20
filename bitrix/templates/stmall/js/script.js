@@ -154,32 +154,7 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
       let newText = metaText.replace(/Защита/g,"защиту");
       $('.meta-text-cat').html(newText);
     }
-    //Страница избранное сообщение
-    if ($(document).find("title").text() == "Избранное") {
-      if ($('font').is('.errortext2')) {
-        if ($('.errortext2').text() == "Ваша корзина пуста") $('.errortext').text("Ваш список избранного пуст");
-        $('.errortext2').wrap('<div class="error-wrap"></div>');
-        $('.favor .error-wrap').parent().addClass('fav-p');
-        $('.error-wrap').append('<span>Подберите что-нибудь подходящее в каталоге</span>')
-        $('.error-wrap').append('<button class="go-back-cat">Перейти в каталог</button>')
-      }
-      $('.go-back-cat').click(() => {
-        location.href = 'http://st-mall.ru/catalog/';
-      });
-    }
-    //Страница корзины сообщение
-    if ($(document).find("title").text() == "Корзина") {
-      if ($('font').is('.errortext2')) {
-         if ($('.errortext2').text() == "Ваша корзина пуста") $('.errortext').text("Ваша корзина пуста");
-        $('.errortext2').wrap('<div class="error-wrap"></div>');
-        $('.cart-container .error-wrap').parent().addClass('fav-p');
-        $('.error-wrap').append('<span>Подберите что-нибудь подходящее в каталоге</span>')
-        $('.error-wrap').append('<button class="go-back-cat">Перейти в каталог</button>')
-      }
-      $('.go-back-cat').click(() => {
-        location.href = 'http://st-mall.ru/catalog/';
-      });
-    }
+
     //
 
     $.each($('.lowecase-title'), function() {

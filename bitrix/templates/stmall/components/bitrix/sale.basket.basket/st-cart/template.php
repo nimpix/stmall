@@ -160,7 +160,7 @@ if (empty($arResult['ERROR_MESSAGE']))
 			<?
 		}
 		?>
-
+<!---->
 <!--		<div class="row">-->
 <!--			<div class="col-xs-12">-->
 <!--				<div class="alert alert-warning alert-dismissable" id="basket-warning" style="display: none;">-->
@@ -172,11 +172,12 @@ if (empty($arResult['ERROR_MESSAGE']))
 <!--				</div>-->
 <!--			</div>-->
 <!--		</div>-->
-
+<!---->
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="basket-items-list-wrapper basket-items-list-wrapper-height-fixed basket-items-list-wrapper-light<?=$displayModeClass?>"
 					id="basket-items-list-wrapper">
+<!--                    -->
 <!--					<div class="basket-items-list-header" data-entity="basket-items-list-header">-->
 <!--						<div class="basket-items-search-field" data-entity="basket-filter">-->
 <!--							<div class="form has-feedback">-->
@@ -199,6 +200,7 @@ if (empty($arResult['ERROR_MESSAGE']))
 <!--								data-entity="basket-items-count" data-filter="not-available" style="display: none;"></a>-->
 <!--						</div>-->
 <!--					</div>-->
+<!--                    -->
 					<div class="basket-items-list-container" id="basket-items-list-container">
 						<div class="basket-items-list-overlay" id="basket-items-list-overlay" style="display: none;"></div>
 						<div class="basket-items-list" id="basket-item-list">
@@ -274,10 +276,27 @@ else
 ?>
 
 <script>
-  let items = $('.basket-item-block-info');
-  var itcountzero = $("#basket-item-table .basket-items-list-item-container").length;
-  // $('.favor').append('<div id="wcount"></div>');
+  //  var endCart = false;
+  //
+   function Refresh(){
+     clearInterval(timerCount);
+     $('.basket-items-list-wrapper').remove();
+     $('.cart-container>.row:first-child').append('<p><font class="errortext2"><font></p>');
+     $('.errortext2').text('Ваша корзина пуста');
+       if ($('.errortext2').text() == "Ваша корзина пуста") $('.errortext').text("Ваша корзина пуста");
+       $('.errortext2').wrap('<div class="error-wrap"></div>');
+       $('.cart-container .error-wrap').parent().addClass('fav-p');
+       $('.error-wrap').append('<span>Подберите что-нибудь подходящее в каталоге</span>')
+       $('.error-wrap').append('<button class="go-back-cat">Перейти в каталог</button>')
 
+     $('.go-back-cat').click(() => {
+       location.href = 'http://st-mall.ru/catalog/';
+     });
+   }
+
+  //
+  var items = $('.basket-item-block-info');
+  var itcountzero = $("#basket-item-table .basket-items-list-item-container").length;
 
   var timerDelete = setInterval(function () {
     $.each(items,function(){
@@ -288,28 +307,18 @@ else
     });
 
   },100);
-
+  //
   var timerCount =setInterval(function(){
-    var itcount = $("#basket-item-table .basket-items-list-item-container").length;
+    let itcount = $("#basket-item-table .basket-items-list-item-container").length;
     if($('#basket-item-table .basket-items-list-item-container-expend').length == 1) $('.basket-items-list-item-container-expend').remove();
-    $('.cart-price').html($('.basket-coupon-block-total-price-current').text());
-
-    $('.cart-count').text(itcount);
-    if(itcountzero == 0){
-
+  //  $('.cart-price').html($('.basket-coupon-block-total-price-current').text());
+  //  $('.cart-count').text(itcount);
+    if(itcountzero == 0 || itcount == 0){
+        endCart = true;
+      $("#basket-root").empty().append('<div class="row"></div>');
+        Refresh();
     }
-    else if(itcount == 0) {
-      setTimeout(function () {
-        clearInterval(timerCount); location.reload();
-      },200);
-    }
+  },10);
 
-  },100);
 
-  if(itcountzero == 0){
-    clearInterval(timerCount);
-    $('.basket-items-list-wrapper').remove();
-    $('.cart-container>.row:first-child').append('<p><font class="errortext2"><font></p>');
-    $('.errortext2').text('Ваша корзина пуста');
-  }
 </script>
