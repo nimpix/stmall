@@ -70,9 +70,6 @@ if ($isFilter)
 		$arCurSection = array();
 }
 ?>
-<div style="display: none;">
-	<? print_r ($arParams); ?>
-</div>
 <div class="row">
 <?
 

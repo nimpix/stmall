@@ -17,7 +17,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-1.11.1.min.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/script.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/timer.js");
-    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/vue.js");
+
     ?>
     <title><? $APPLICATION->ShowTitle('title'); ?></title>
 
@@ -129,7 +129,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
     <div class="form-main">
         <? $APPLICATION->IncludeComponent(
             "bitrix:form",
-            "my_form",
+            "my_form3",
             array(
                 "AJAX_MODE" => "N",
                 "AJAX_OPTION_ADDITIONAL" => "",

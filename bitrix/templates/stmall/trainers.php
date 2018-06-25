@@ -109,4 +109,55 @@ function getSales(){
     return $tmps;
 }
 
+function getCategories($iblock_id = 1,$sections){
+
+    $arFilter = array(
+        'IBLOCK_ID' => $iblock_id,
+        'ID' => $sections,
+        'DEPTH_LEVEL' => 1
+    );
+
+    $custom_sections = array();
+    $custom_section = array();
+    $rsSect = CIBlockSection::GetList(array('left_margin' => 'asc'),$arFilter);
+
+    while ($arSect = $rsSect->GetNext())
+    {
+        $custom_section['NAME'] = $arSect['NAME'];
+        $custom_section['ID'] = $arSect['ID'];
+        $custom_section['URL'] = $arSect['LIST_PAGE_URL'].$arSect['SECTION_PAGE_URL']."/";
+        $custom_section['PICTURE'] = $arSect['PICTURE'];
+
+        $custom_sections[] = $custom_section;
+        $tmp = $arSect;
+    }
+
+    $count =0;
+    foreach ($custom_sections as $cs){
+        if($cs['NAME'] == '000IMPORT') continue;
+        ?>
+
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <div class="name-mcat"><?=$cs['NAME']?></div>
+                <a href="<?=$cs['URL']?>">
+                    <?
+                    $arFile = CFile::GetFileArray($cs['PICTURE']);
+                    if($arFile){
+                        $pic_subdir = $arFile["SUBDIR"]; //���������� ����� ��������
+                        $pic_filename = $arFile["FILE_NAME"]; //��� �������� � �����������
+                        ?>
+                        <div class="fader"></div>
+                        <img src="/upload/<?=$pic_subdir?>/<?=$pic_filename?>"/>
+                        <?
+                    }
+                    ?>
+                </a>
+        </div>
+
+
+        <? $count++; if($count == 12) break;
+
+    }
+}
+
 ?>

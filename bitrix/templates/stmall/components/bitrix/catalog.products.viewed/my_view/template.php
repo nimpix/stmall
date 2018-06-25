@@ -116,6 +116,7 @@ $containerName = 'catalog-products-viewed-container';
 
 <div class="col-xs-12 is-viewed">
     <h3 class="view-title">Вы недавно смотрели</h3>
+<?// print vardump($arParams);?><!-- -->
 	<?
 	if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS']))
 	{

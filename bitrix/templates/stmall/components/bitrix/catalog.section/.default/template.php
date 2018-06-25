@@ -146,7 +146,7 @@ $containerName = 'container-'.$navParams['NavNum'];
 
 	?>
 
-<!--Мета-тэги для каталога отправляем в сессию для компонент эпилога-->
+
 <?
 $_SESSION['arNav_RESULT'] = $arResult['NAV_RESULT'];
 $_SESSION['arName'] =  $arResult['NAME'];

@@ -110,6 +110,13 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
 
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   $(document).on('ready', function() {
+
+
+    $('.form-3 #input1').attr('placeholder','Ваше имя');
+    $('.form-3 #input2').attr('placeholder','Ваш телефон');
+    $('.form-3 textarea').attr('placeholder','Опишите свою потребность или оставьте поле пустым');
+    $('.form-4 .form-group>input').attr('placeholder','Телефон');
+    
     //Махинации в мобильной версии
     if(document.body.clientWidth < 769){
       $('.mobile-phone a').empty();

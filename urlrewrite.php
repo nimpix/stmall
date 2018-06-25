@@ -24,11 +24,11 @@ $arUrlRewrite=array (
     'PATH' => '/lp/pub/site/index.php',
     'SORT' => 100,
   ),
-  1 => 
+  8 => 
   array (
     'CONDITION' => '#^/catalog/#',
     'RULE' => '',
-    'ID' => 'adamant:catalog',
+    'ID' => 'bitrix:catalog',
     'PATH' => '/catalog/index.php',
     'SORT' => 100,
   ),

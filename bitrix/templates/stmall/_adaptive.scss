@@ -123,28 +123,67 @@
 }
 
 @media (max-width: 992px){
+  .payment-text{
+    & h4{
+      text-align:left;
+      display:block;
+      width:100%;
+      text-align: left!important;
+    }
+    & .nal-text{width:100%;text-align:left!important;}
+    & .card-group{
+      width:100%;
+      justify-content: start;
+      & span{
+        margin-right: 10px;
+      }
+    }
+  }
+  .logo {
+    transform: scale(0.6) translateX(-100px);
+  }
 
-.logo {
-  transform: scale(0.6) translateX(-100px);
-}
+  .search {
+    margin-left: -100px;
+  }
 
-.search {
-  margin-left: -100px;
-}
+  div[class *=tr-button] a {
+    font-size: 17px;
+  }
 
-div[class *=tr-button] a {
-  font-size: 17px;
-}
-
-.bonus .row span:nth-child(2) {
-  margin-top: 0px;
-}
-
+  .bonus .row span:nth-child(2) {
+    margin-top: 0px;
+  }
+  footer .ml-5{margin-left: 2rem!important;}
+  .left-footer .row div:nth-child(2) div{
+    margin-right: 0px;
+  }
 }
 /*
 Tabs
 */
 @media (max-width: 768px) {
+  .form-4{display:block;}
+  .dropdown-menu{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .mob-categories{display:block;}
+  .sales .sale-text{
+    margin-bottom: 0;}
+  .tr-item .img_wrapper{
+    padding:0px 20px 40px 20px
+  }
+  .mobile-banner{height:60vh;}
+  .main-banner{display:none;}
+  .mobile-banner{
+    display:flex!important;
+    flex-flow:row wrap;
+    align-items:center;
+    justify-content: center;
+  }
+  footer .ml-5{margin-left: 0rem!important;}
   .main-banner {
     & .banner-text div{
       float: inherit;
@@ -234,7 +273,7 @@ Tabs
       width:20px;
       height: 25px;
       position: absolute;
-      top:-20px;
+      top:-18px;
       left: -10px;
     }
   }
@@ -272,9 +311,22 @@ Tabs
 }
 
 //Tabs
-
+@media (min-width:600px){
+  .mob-categories a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .mob-categories a img {
+    display: block;
+    width: 70%;
+    height: 90%;}
+}
 
 @media (max-width: 600px) {
+  .mobile-banner{height:60vh;}
   #title-cat button {
     margin-left: 0px;
   }
@@ -304,6 +356,8 @@ Tabs
 }
 
 @media (max-width: 468px) {
+  .form-4 .form-main form[name='mobile_form'] .form-table{ height:25vh;}
+  .mobile-banner{height:40vh;}
   .timer {
     transform: scale(0.8) translateX(-20px);
   }
@@ -346,8 +400,16 @@ Tabs
   }
 
 }
+@media (max-width: 340px) {
+  .flogo{
+    & img{
+      transform:scale(0.7) translateX(-30px);
+    }
+  }
+}
 
-@media (max-width: 320px) {
+@media (max-width: 321px) {
+  .politic-group span{font-size:10px;}
   .trainer-img, .right-trainer .trainer-img {
     grid-template-rows: 300px 180px;
   }

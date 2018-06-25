@@ -33,12 +33,12 @@ else
     <div class="row no-gutters">
         <div class="col-xs-12 catalog-title">
             <h1>
-                <?$APPLICATION->ShowTitle(false);?>
+                <? $APPLICATION->ShowTitle(false);?>
                 <? $APPLICATION->ShowViewContent('h1_brand');?>
             </h1>
 
         </div>
-
+	
  <?
 
 
@@ -103,10 +103,7 @@ if ($isFilter || $isSidebar): ?>
                     array("HIDE_ICONS" => "Y")
                 );
 
-                // global $arrFilter;
-								//
-                // $arrFilter[] = array(1);
-// print $_SESSION['comPage1'];
+  
 				if($_SERVER["REQUEST_URI"] == '/catalog/'){
 
 				}else{
@@ -142,52 +139,7 @@ if ($isFilter || $isSidebar): ?>
 						array('HIDE_ICONS' => 'Y')
 					);
 				}
-				//
-				// if(empty($arResult["VARIABLES"]["SMART_FILTER_PATH"])){
-				// 	$str = Bitrix\Main\Context::getCurrent()->getRequest()->getRequestedPage();
-				//
-				// 	$matches = explode("/",$str);
-				// 	foreach ($matches as $key => $match) {
-				// 		if($key == 0 || $key == 1) continue;
-				// 		$strFilterPath .= $match;
-				// 	}
-				//
-				// 	$arResult["VARIABLES"]["SMART_FILTER_PATH"] =$strFilterPath;
-				// }
-
-				//	print "path= ".$arResult["VARIABLES"]["SMART_FILTER_PATH"]." ";
-
-				// $APPLICATION->IncludeComponent(
-				// 	"adamant:catalog.smart.filter",
-				// 	"original",
-				// 	array(
-				// 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-				// 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-				//     "SECTION_ID" => $getSectionFilter,
-				// 		"SHOW_ALL_WO_SECTION" => "Y",
-				// 		"FILTER_NAME" => $arParams["FILTER_NAME"],
-				// 		"PRICE_CODE" => $arParams["PRICE_CODE"],
-				// 		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-				// 		"CACHE_TIME" => $arParams["CACHE_TIME"],
-				// 		"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-				// 		"SAVE_IN_SESSION" => "N",
-				// 		"FILTER_VIEW_MODE" => $arParams["FILTER_VIEW_MODE"],
-				// 		"XML_EXPORT" => "Y",
-				// 		"SECTION_TITLE" => "NAME",
-				// 		"SECTION_DESCRIPTION" => "DESCRIPTION",
-				// 		'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
-				// 		"TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],
-				// 		'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
-				// 		'CURRENCY_ID' => $arParams['CURRENCY_ID'],
-				// 		"SEF_MODE" => $arParams["SEF_MODE"],
-				// 		"SEF_RULE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["smart_filter"],
-				// 		"SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
-				// 		"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
-				// 		"INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
-				// 	),
-				// 	$component,
-				// 	array('HIDE_ICONS' => 'Y')
-				// );
+	
 				?>
 			</div>
 		<? endif ?>
@@ -636,5 +588,6 @@ if ($isFilter || $isSidebar): ?>
 	</div>
 
 
+</div>
 </div>
 </div>

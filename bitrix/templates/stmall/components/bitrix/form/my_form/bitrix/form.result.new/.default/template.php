@@ -59,7 +59,7 @@ if($arResult["isUseCaptcha"] == "Y")
 } // isUseCaptcha
 ?>
     <div class="politic-group">
-        <input type="checkbox" checked><span>С <a href="politics">политикой</a> обработки персональных данных ознакомлен</span>
+        <input type="checkbox" checked><span>С <a href="/politika">политикой</a> обработки персональных данных ознакомлен</span>
     </div>
 	<div class="button-group">
 
@@ -74,3 +74,4 @@ if($arResult["isUseCaptcha"] == "Y")
 <?
 } //endif (isFormNote)
 ?>
+

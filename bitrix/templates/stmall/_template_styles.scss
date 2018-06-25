@@ -398,7 +398,7 @@ body {
   border: 2px solid #73d834;
   outline: none !important;
   cursor: pointer;
-  width: 150px;
+  width: 151px;
   height: 43px;
   color: #73d834;
   text-transform: uppercase;
@@ -587,7 +587,7 @@ body {
 .banner-text span {
   font-family: 'CorbelRegular';
   font-size: 22px;
-  color: #2e2e2e;
+  color: var(--color-main);
   margin-left: 3px;
 }
 
@@ -718,7 +718,7 @@ body {
   top: -1px;
   display: none;
   width: auto;
-  min-height: 426px;
+  min-height: 434px;
   min-width: 700px;
   width: auto;
   height: auto;
@@ -1448,6 +1448,7 @@ div[id*='timer'] span {
   font-family: 'CorbelBold';
   font-size: 18px;
   color: var(--color-main);
+  text-transform: uppercase;
 }
 
 .right-footer ul li a {
@@ -1568,7 +1569,7 @@ div[class *=tr-button] {
 .mob-menu {
   width: 100% !important;
   text-align: center !important;
-  top: 91px !important;
+  top: 90px !important;
   left: 0 !important;
   display: none;
 }
@@ -2364,18 +2365,28 @@ div[class*='bx-ui-slider-part'] {
 }
 
 .product-item-button-container .btn-md {
+  display: block;
+  float: right;
+  background: none;
   outline: none;
   text-transform: uppercase;
-  font-family: "CorbelBold";
-  background-color: var(--salat) !important;
-  border: none;
-  outline: none !important;
+  font-family: 'CorbelBold';
+  font-size: 16px;
+  color: var(--salat) !important;
+  border-radius: 20px;
   border: 1px solid var(--salat) !important;
+  outline: none !important;
+  width: 115px;
+  height: 35px;
+  cursor: pointer;
+  background:none!important;
+  position: relative;
+  top:-5px;
 }
 
 .product-item-button-container .btn-md:hover {
-  background-color: #ffffff !important;
-  color: var(--salat) !important;
+  background-color: var(--salat) !important;
+  color: #ffffff !important;
   border: 1px solid var(--salat) !important;
 }
 
@@ -2894,7 +2905,7 @@ div[class*='bx-ui-slider-part'] {
 .right-sideblock {
   display: grid;
   grid-template-columns: 310px;
-  grid-template-rows: 355px 220px 450px auto;
+  grid-template-rows: 355px 270px 390px auto;
   grid-row-gap: 10px;
 }
 
@@ -3226,9 +3237,9 @@ input[data-entity="basket-filter-input"] {
   padding: 30px 20px 30px 20px;
 }
 
-.form-1, .form-2, .form-3 {
+.form-1, .form-2 {
   width: 300px;
-  height: 330px;
+  height: 350px;
   position: fixed;
   left: 50%;
   border: 1px solid #55d244;
@@ -3301,7 +3312,7 @@ form[name='variant_form'] {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: -20px;
 }
 
 .button-group input {
@@ -3314,6 +3325,10 @@ form[name='variant_form'] {
   text-transform: uppercase;
   font-family: "CorbelBold";
   font-size: 15px;
+  cursor:pointer;
+  &:hover{
+    background:#dfe0e2;
+  }
 }
 
 .form-table {
@@ -3630,7 +3645,9 @@ button[data-entity="basket-checkout-button"] {
 .bx-breadcrumb .catalog-item:first-child {
   display: none;
 }
-
+.bx-soa-more-btn .btn-default{
+  background:var(--salat) !important;
+}
 .wishc {
   width: 15px;
   float: left;
@@ -3725,8 +3742,282 @@ div[data-entity="basket-total-block"] {
     width:15px !important;
   }
   & span{
+    font-size: 12px;
+    color:#FFF;
+    display: block;
+    position: relative;
+    left: 20px;
+    top: -33px;
     & a{
+      font-size: 12px !important;
+      color:blue !important;
+      text-decoration: underline;
+      &:hover{
+        color:#FFF !important;
+      }
+    }
+  }
+}
 
+.form-3{
+  width: 330px;
+  height: 450px;
+  position: fixed;
+  left: 50%;
+  @include border-radius(2px);
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -200px;
+  background: url("/bitrix/templates/stmall/images/form3-bg.png") center;
+  background-size:cover;
+  z-index: 20000;
+  display: none;
+  & input{
+    border:1px solid var(--salat);
+    height:45px;
+    @include border-radius(4px);
+    &:focus{outline:none !important;}
+  }
+  & .form-table{
+    width:250px;
+  }
+  & label{display:none;}
+  & textarea{
+    resize:none;
+    border:1px solid var(--salat);
+    @include border-radius(4px);
+    width: 100%;
+    font-size: 14px;
+    font-family: "CorbelRegular";
+    padding-left: 10px;
+    width:100%;
+    padding-top: 15px;
+    padding-bottom:15px;
+  }
+  & .form-title{
+    color: #353334;
+    margin-bottom: 20px;
+    & div{
+      width:100%;
+      text-align: center;
+      font-family: "CorbelBold";
+      &:first-child{font-size: 19px;}
+      &:nth-child(2){font-size: 13px;}
+    }
+  }
+  & .politic-group{
+    margin-top: 5px;
+    & span{
+      color:#1a1a1a;
+      font-size:11px;
+      font-family: "CorbelBold";
+      margin-bottom: 15px;
+      & a{
+        color:#1a1a1a;
+        font-family: "CorbelBold";
+        font-size:11px !important;
+        text-decoration: none;
+      }
+    }
+  }
+  & input[type='submit']{
+    width:120px;
+    height:35px;
+    text-transform: uppercase;
+    font-size:15px;
+    color:#FFF;
+    background:var(--salat);
+    @include border-radius(20px);
+  }
+}
+.form-2 {
+  & .button-group{
+     margin-top: 20px !important;
+  }
+  & textarea{
+    resize:none;
+    &:focus{outline:none !important;}
+  }
+}
+.form-main input:focus{outline:none !important;}
+.payment-text{
+  height:130px;
+  & div{
+    font-family: 'CorbelRegular';
+    font-size: 16px;
+    color: var(--color-main);
+  }
+  & .card-group{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+    width:230px;
+    & span{
+      display:inline-block;
+      align-self:center;
+    }
+  }
+
+}
+.fcon{
+  margin-left: 4rem!important;
+}
+.flogo{
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+.mobile-banner{
+  display:none !important;
+  background:url("/bitrix/templates/stmall/images/mbanner.jpg") center;
+  background-size: cover;
+  width:100%;
+  height:40vh;
+  & h1{
+      @include fluidFontSize(38, 48, 360, 768);
+      color:#FFF;
+      font-family: "CorbelBold";
+    display:block;
+    width:100%;
+    text-align:center;
+    padding-top: 5%;
+    padding-bottom: 2%;
+  }
+  & hr{
+    border:0;
+    border-bottom:2px solid #FFF;
+    width:80%;
+  }
+  & span{
+    @include fluidFontSize(23px,28px,360px,768px);
+    display:block;
+    color:#FFF;
+    width:100%;
+    text-align: center;
+    margin-top: -5px;
+    line-height:25px;
+    padding-bottom: 5%;
+  }
+  & .banner-wrap{
+    padding:20px 15px;
+  }
+}
+.mob-categories{
+  display:none;
+  & a{
+    display: block;
+    width:100%;
+    height:100%;
+    & img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  & .name-mcat{
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    text-align: center;
+    @include fluidFontSize(14px,28px,360px,768px);
+    color:#2e2e2e;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+    line-height: 20px;
+    height:75px;
+  }
+  .col-6{
+    padding:2vh 2vw 0 2vw;
+    & .fader{
+      @include faderbg();
+      width:100%;
+      height:100%;
+      position: absolute;
+      bottom:0px;
+      left:0px;
+      z-index: 20;
+    }
+  }
+}
+.page-simple p,.page-simple span,.page-simple div{
+  color:var(--color-main);
+}
+.description-body ul,.page-simple ul{
+  list-style-type: none;
+  & li{
+    padding-left:40px;
+    line-height:30px;
+    &:before{
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #7fbf00;
+      display: block;
+      position: absolute;
+      margin-left: -20px;
+      margin-top: 11px;
+    }
+  }
+}
+.form-4{
+  display:none;
+  width:100%;
+  margin-top: 4vh;
+  & .form-main{
+    padding:0;
+    width:100%;
+   & form[name='mobile_form']{
+      width:100%;
+      & .form-table{
+        width: 100% !important;
+        background:#abe319;
+        height:23vh;
+        padding:0 10px;
+        & .form-group{
+          & .politic-group{
+            display: flex;
+            width: 100%;
+            flex-flow: row wrap;
+            justify-content: center;
+            & span{
+              left:10px;
+              top:-3px;
+            }
+          }
+          & .button-group{
+            display: inline-block;
+            margin-top: 0;
+            & input{
+              width: 33vw;
+              margin-left: 5px;
+              background: #00bc7b;
+              border-radius: 20px;
+              height: 5vh;
+              max-width: 122px;
+              color: #FFF;
+              font-family: "CorbelBold";
+              text-transform: inherit;
+            }
+          }
+          &>input{
+            border-radius: 20px;
+            height: 5vh;
+            width: 58vw;
+            padding-left: 20px;
+            max-width: 213px;
+          }
+        }
+        & .form-title{
+          width:100%;
+          text-align: center;
+          @include fluidFontSize(18px,22px,360px,768px);
+          line-height:25px;
+          padding:15px 10px 0px 10px;
+        }
+      }
     }
   }
 }
