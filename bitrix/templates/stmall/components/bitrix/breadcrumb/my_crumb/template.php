@@ -19,8 +19,10 @@ if(!is_array($css) || !in_array("/bitrix/css/main/font-awesome.css", $css))
 {
 	$strReturn .= '<link href="'.CUtil::GetAdditionalFileURL("/bitrix/css/main/font-awesome.css").'" type="text/css" rel="stylesheet" />'."\n";
 }
-
-$strReturn .= '<div class="bx-breadcrumb">';
+$page = $APPLICATION->GetCurPage();
+$flag = strpos($page,'catalog');
+$bc = ($flag) ? 'bx-breadcrumb-prod' : '' ;
+$strReturn .= '<div class="bx-breadcrumb '.$bc.'">';
 
 $itemSize = count($arResult);
 $server_address = $_SERVER['REQUEST_URI'];
@@ -50,9 +52,10 @@ for($index = 0; $index < $itemSize; $index++)
 	else
 	{
 		$strReturn .= '
-			<div class="bx-breadcrumb-item">
-
-				<span style="color:var(--salat);margin-top:1px;display:block;">'.$title.'</span>
+			<div class="bx-breadcrumb-item bx-breadcrumb-item-last">
+				<a href="'.$arResult[$index]["LINK"].'" title="'.$title.'" itemprop="url">
+					<span style="color:var(--salat);margin-top:1px;display:block;text-decoration:none;" itemprop="title">'.$title.'</span>
+				</a>	
 			</div>';//'.$title.'
 	}
 }

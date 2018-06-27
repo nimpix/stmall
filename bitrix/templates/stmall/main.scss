@@ -16,42 +16,49 @@
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.97) 98%,rgba(255,255,255,0.97) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78ffffff', endColorstr='#f7ffffff',GradientType=0 ); /* IE6-9 */
 }
+@mixin greenGradient(){
+    background-color: #4fcd46;
+    /* IE9, iOS 3.2+ */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj48c3RvcCBzdG9wLWNvbG9yPSIjMDBjNDgxIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM5ZGQ1MGIiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 0%,color-stop(0, rgb(0, 196, 129)),color-stop(1, rgb(157, 213, 11)));
+    /* Android 2.3 */
+    background-image: -webkit-repeating-linear-gradient(left,rgb(0, 196, 129) 0%,rgb(157, 213, 11) 100%);
+    /* IE10+ */
+    background-image: repeating-linear-gradient(to right,rgb(0, 196, 129) 0%,rgb(157, 213, 11) 100%);
+    background-image: -ms-repeating-linear-gradient(left,rgb(0, 196, 129) 0%,rgb(157, 213, 11) 100%);
+    
+}
 
 
-@function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+
+
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluidFontSize($min-font-size, $max-font-size,$min-vw, $max-vw,) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
   }
-
-  @return $number;
-}
-
-@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
-  $f-min: strip-unit($f-min);
-  $f-max: strip-unit($f-max);
-  $w-min: strip-unit($w-min);
-  $w-max: strip-unit($w-max);
-
-  $k: ($f-max - $f-min)/($w-max - $w-min);
-  $b: $f-min - $k * $w-min;
-
-  $b: $b + $units;
-
-  @return calc( #{$k} * 100vw + #{$b} );
-}
-
-@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
-  @if ($fallback) {
-    font-size: $fallback;
-  }
-  font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
-
 }
 
 
-
-@import 'blog';
-@import 'template_styles';
-@import 'adaptive';
+@import 'sass/blog';
+@import 'sass/template_styles';
+@import 'sass/adaptive';
 
 

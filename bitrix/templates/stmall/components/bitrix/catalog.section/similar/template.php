@@ -197,7 +197,7 @@ if ($showTopPager)
 											$item = reset($rowItems);
 											$APPLICATION->IncludeComponent(
 												'bitrix:catalog.item',
-												'',
+												'similar',
 												array(
 													'RESULT' => array(
 														'ITEM' => $item,
@@ -237,7 +237,7 @@ if ($showTopPager)
 												<?
 												$APPLICATION->IncludeComponent(
 													'bitrix:catalog.item',
-													'',
+													'similar',
 													array(
 														'RESULT' => array(
 															'ITEM' => $item,
@@ -280,7 +280,7 @@ if ($showTopPager)
 												<?
 												$APPLICATION->IncludeComponent(
 													'bitrix:catalog.item',
-													'',
+													'similar',
 													array(
 														'RESULT' => array(
 															'ITEM' => $item,
@@ -321,7 +321,7 @@ if ($showTopPager)
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'',
+											'similar',
 											array(
 												'RESULT' => array(
 													'ITEM' => $item,
@@ -358,7 +358,7 @@ if ($showTopPager)
 									$item = array_shift($rowItems);
 									$APPLICATION->IncludeComponent(
 										'bitrix:catalog.item',
-										'',
+										'similar',
 										array(
 											'RESULT' => array(
 												'ITEM' => $item,
@@ -390,7 +390,7 @@ if ($showTopPager)
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'',
+											'similar',
 											array(
 												'RESULT' => array(
 													'ITEM' => $rowItems[$i],
@@ -430,7 +430,7 @@ if ($showTopPager)
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'',
+											'similar',
 											array(
 												'RESULT' => array(
 													'ITEM' => $rowItems[$i],
@@ -461,7 +461,7 @@ if ($showTopPager)
 									$item = end($rowItems);
 									$APPLICATION->IncludeComponent(
 										'bitrix:catalog.item',
-										'',
+										'similar',
 										array(
 											'RESULT' => array(
 												'ITEM' => $item,
@@ -498,7 +498,7 @@ if ($showTopPager)
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'',
+											'similar',
 											array(
 												'RESULT' => array(
 													'ITEM' => $item,
@@ -535,7 +535,7 @@ if ($showTopPager)
 									$item = array_shift($rowItems);
 									$APPLICATION->IncludeComponent(
 										'bitrix:catalog.item',
-										'',
+										'similar',
 										array(
 											'RESULT' => array(
 												'ITEM' => $item,
@@ -567,7 +567,7 @@ if ($showTopPager)
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'',
+											'similar',
 											array(
 												'RESULT' => array(
 													'ITEM' => $rowItems[$i],
@@ -607,7 +607,7 @@ if ($showTopPager)
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'',
+											'similar',
 											array(
 												'RESULT' => array(
 													'ITEM' => $rowItems[$i],
@@ -638,7 +638,7 @@ if ($showTopPager)
 									$item = end($rowItems);
 									$APPLICATION->IncludeComponent(
 										'bitrix:catalog.item',
-										'',
+										'similar',
 										array(
 											'RESULT' => array(
 												'ITEM' => $item,
@@ -675,7 +675,7 @@ if ($showTopPager)
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'',
+											'similar',
 											array(
 												'RESULT' => array(
 													'ITEM' => $item,
@@ -716,7 +716,7 @@ if ($showTopPager)
 		// load css for bigData/deferred load
 		$APPLICATION->IncludeComponent(
 			'bitrix:catalog.item',
-			'',
+			'similar',
 			array(),
 			$component,
 			array('HIDE_ICONS' => 'Y')

@@ -9,6 +9,12 @@
 
 global $APPLICATION;
 
+?>
+<script>
+  $('.lowecase-title').text($('.catalog-title').text());
+</script>
+<?
+
 if (isset($templateData['TEMPLATE_THEME']))
 {
 	$APPLICATION->SetAdditionalCSS($templateFolder.'/themes/'.$templateData['TEMPLATE_THEME'].'/style.css');

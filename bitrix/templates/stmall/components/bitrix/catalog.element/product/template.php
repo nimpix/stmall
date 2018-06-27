@@ -271,10 +271,9 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 </div>
 <div class="bx-catalog-element product container bx-<?=$arParams['TEMPLATE_THEME']?>" id="<?=$itemIds['ID']?>"
 	itemscope itemtype="http://schema.org/Product">
-	<div class="container-fluid">
 
-		<div class="row">
-			<div class="col-md-5 col-sm-12">
+		<div class="row no-gutters">
+			<div class="col-lg-6 col-md-6 col-sm-12">
 				<div class="product-item-detail-slider-container" id="<?=$itemIds['BIG_SLIDER_ID']?>">
 					<span class="product-item-detail-slider-close" data-entity="close-popup"></span>
 					<div class="product-item-detail-slider-block
@@ -331,7 +330,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 								{
 									?>
 
-									<div class="product-image">
+									<div class="product-image d-flex align-items-center justify-content-center">
 										<img src="<?=$photo['SRC']?>" alt="<?=$alt?>" title="<?=$title?>"<?=($key == 0 ? ' itemprop="image"' : '')?>>
 									</div>
 									<?
@@ -400,15 +399,15 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 					?>
 				</div>
 			</div>
-			<div class="col-md-7 col-sm-12">
-				<div class="row">
-					<div class="col-sm-12">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="row no-gutters">
+					
                         <?
                         if ($arParams['DISPLAY_NAME'] === 'Y')
                         {
                             ?>
-                            <div class="row">
-                                <div class="col-xs-12">
+                         
+                                <div class="col-xs-12 col-xs-12 px-3 px-md-0">
                                     <h1 class="bx-title"><?=$name?></h1>
 
                                     <!--  Счетчики -->
@@ -426,12 +425,12 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
                                         <?=str_replace('руб.','р.',$price['PRINT_RATIO_PRICE'])?>
                                     </div>
                                 </div>
-                            </div>
+                      
                             <?
                         }
                         ?>
-                        <div class="row">
-                            <div class="col-xs-12 product-buttons">
+                        <div class="col-xs-12">
+                            <div class="row no-gutters product-buttons px-3 px-md-0">
                                 <div class="favourite">
 
                                     <? if(\Bitrix\Main\Loader::includeModule("sale"))
@@ -495,7 +494,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
                         </div>
 
                         <!--  Кнопки-->
-                        <div class="row">
+                        <div class="row no-gutters px-3 px-md-0">
                            <div class="col-sm-12">
                                 <?
                                 foreach ($arParams['PRODUCT_PAY_BLOCK_ORDER'] as $blockName)
@@ -1001,13 +1000,13 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 							}
 							?>
 						</div>
-					</div>
+					
 
 				</div>
 			</div>
 		</div>
-        <div class="row bottom-part-product">
-            <div class="col-xs-9">
+        <div class="row no-gutters bottom-part-product">
+            <div class="col-xs-9 no-padding">
                 <div class="col-xs-12 description">
                     <h3 class="description-title">Описание</h3>
                     <div class="description-body"><?=$arResult['DETAIL_TEXT'];?></div>
@@ -1277,7 +1276,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
             </div>
 
 <!--            RIGHT SIDE-->
-            <div class="col-xs-3">
+            <div class="col-xs-3 no-padding">
                 <div class="right-sideblock">
                     <div class="delivery-1">
                         <ul>
@@ -1341,7 +1340,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
             </div>
         </div>
 
-		<div class="row">
+		<div class="row no-gutters">
 			<div class="col-xs-12">
 				<?
 				if ($haveOffers)
@@ -1407,7 +1406,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 		</div>
 
 		
-		<div class="row">
+		<div class="row no-gutters">
 			<div class="col-xs-12">
 			<div style="display: none;">
 				<?
@@ -1471,7 +1470,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 		</div>
 		
 
-		<div class="row">
+		<div class="row no-gutters">
 			<div class="col-xs-12">
 				<?
 				if ($arResult['CATALOG'] && $actualItem['CAN_BUY'] && \Bitrix\Main\ModuleManager::isModuleInstalled('sale'))
@@ -1936,7 +1935,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 		<?
 	}
 	?>
-</div>
+
 <?
 if ($haveOffers)
 {

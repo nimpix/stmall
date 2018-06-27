@@ -11,16 +11,15 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 <!DOCTYPE html>
 <html xml:lang="<?= LANGUAGE_ID ?>" lang="<?= LANGUAGE_ID ?>">
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <? $APPLICATION->ShowHead();
     $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH."/style.css");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-1.11.1.min.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/script.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/timer.js");
-
+    //$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/vue.js");
+   // $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/vue_script.js");
     ?>
     <title><? $APPLICATION->ShowTitle('title'); ?></title>
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
@@ -28,27 +27,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
           integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript"> (function (d, w, c) {
-        (w[c] = w[c] || []).push(function () {
-          try {
-            w.yaCounter49112977 = new Ya.Metrika2({
-              id: 49112977,
-              clickmap: true,
-              trackLinks: true,
-              accurateTrackBounce: true,
-              webvisor: true,
-              trackHash: true,
-            })
-          } catch (e) { }
-        })
-        var n = d.getElementsByTagName('script')[0], s = d.createElement('script'),
-          f = function () { n.parentNode.insertBefore(s, n) }
-        s.type = 'text/javascript'
-        s.async = true
-        s.src = 'https://mc.yandex.ru/metrika/tag.js'
-        if (w.opera == '[object Opera]') { d.addEventListener('DOMContentLoaded', f, false) } else { f() }
-      })(document, window, 'yandex_metrika_callbacks2') </script>
+  
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/49112977" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript> <!-- /Yandex.Metrika counter -->
@@ -70,7 +49,6 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 
 
 <body>
-
 
 <div id="panel"><? $APPLICATION->ShowPanel(); ?></div>
 <div class="popback"></div>
@@ -182,11 +160,14 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 <!--    base-->
     <div class="content">
         <!--  Mobile menu-->
-        <div class="mobile-menu">
+        <?$page = $APPLICATION->GetCurPage();
+        $flag = strpos($page,'catalog');
+        ?>
+        <div class="mobile-menu <? $out = ($flag) ? 'menu-green' : ''; echo $out;?>">
 
 
             <div class="catalog-dropdown">
-                <div id="mobile-drop">
+                <div id="mobile-drop" class="<?echo (!$flag) ? '':'prod-menu-mobile-drop' ;?>">
                     <div class="menu-bar">
                         <span class="line-bar"></span>
                         <span class="line-bar"></span>
@@ -195,9 +176,19 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                 </div>
             </div>
 
-            <div class="logo"></div>
-            <div class="separator-menu"></div>
-            <div class="mobile-phone">
+            <div class="<?echo (!$flag) ? 'logo':'prod-menu-logo' ;?>"><?
+            if($flag){
+                ?>
+                    <div class="product-menu-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="SPORT MALL">
+                        </div>
+                    </div>
+                <?
+            }
+            ?></div>
+            <div class="<?echo (!$flag) ? 'separator-menu':'' ;?>"></div>
+            <div class="mobile-phone <?echo ($flag) ? 'mobile-phone-white' : '';?>">
                 <a href="tel:+74950217733" class="phone">8 (495) 021-77-33</a>
             </div>
 
@@ -212,7 +203,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 
             </div>
 
-            <div class="mobile-search">
+            <div class="mobile-search <?echo (!$flag) ? '' : 'white-mob-search';?>">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Я ищу...">
                 </div>
