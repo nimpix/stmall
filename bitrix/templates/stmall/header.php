@@ -45,6 +45,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
       fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=207484840066549&ev=PageView&noscript=1"/></noscript>
+    <meta name="yandex-verification" content="d25a619a4b76674e" />
 </head>
 
 
@@ -218,23 +219,25 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
         <!---->
         <!--Дропменю мобайл-->
         <? $APPLICATION->IncludeComponent(
-            "adamant:menu",
-            "catalog_vmenu",
-            Array(
-                "ALLOW_MULTI_SELECT" => "N",
-                "CHILD_MENU_TYPE" => "left",
-                "COMPONENT_TEMPLATE" => "catalog_vertical",
-                "DELAY" => "N",
-                "MAX_LEVEL" => "3",
-                "MENU_CACHE_GET_VARS" => "",
-                "MENU_CACHE_TIME" => "3600",
-                "MENU_CACHE_TYPE" => "N",
-                "MENU_CACHE_USE_GROUPS" => "Y",
-                "MENU_THEME" => "blue",
-                "ROOT_MENU_TYPE" => "left",
-                "USE_EXT" => "Y",
-            )
-        ); ?>
+	"adamant:menu", 
+	"catalog_vmenu", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"COMPONENT_TEMPLATE" => "catalog_vmenu",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "3",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "360000",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"MENU_THEME" => "blue",
+		"ROOT_MENU_TYPE" => "left",
+		"USE_EXT" => "Y"
+	),
+	false
+); ?>
 
 
         <!--Меню сверху-->
@@ -367,46 +370,50 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                 <div class="">
                     <span>Каталог товаров</span>
                     <? $APPLICATION->IncludeComponent(
-                        "adamant:menu",
-                        "catalog_vmenu",
-                        Array(
-                            "ALLOW_MULTI_SELECT" => "N",
-                            "CHILD_MENU_TYPE" => "left",
-                            "COMPONENT_TEMPLATE" => "catalog_vertical",
-                            "DELAY" => "N",
-                            "MAX_LEVEL" => "3",
-                            "MENU_CACHE_GET_VARS" => "",
-                            "MENU_CACHE_TIME" => "3600",
-                            "MENU_CACHE_TYPE" => "N",
-                            "MENU_CACHE_USE_GROUPS" => "Y",
-                            "MENU_THEME" => "blue",
-                            "ROOT_MENU_TYPE" => "left",
-                            "USE_EXT" => "Y",
-                        )
-                    ); ?>
+	"adamant:menu",
+	"catalog_vmenu",
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"COMPONENT_TEMPLATE" => "catalog_vmenu",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "3",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "360000",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"MENU_THEME" => "blue",
+		"ROOT_MENU_TYPE" => "left",
+		"USE_EXT" => "Y"
+	),
+	false
+); ?>
 
                 </div>
             </nav>
             <div class="catalog-menu col-sm-8 col-lg-8 col-md-8 col-xl-auto ml-auto">
 
                 <? $APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "catalog_hmenu",
-                    Array(
-                        "ALLOW_MULTI_SELECT" => "N",
-                        "CHILD_MENU_TYPE" => "left",
-                        "COMPONENT_TEMPLATE" => "catalog_vertical",
-                        "DELAY" => "N",
-                        "MAX_LEVEL" => "3",
-                        "MENU_CACHE_GET_VARS" => "",
-                        "MENU_CACHE_TIME" => "3600",
-                        "MENU_CACHE_TYPE" => "N",
-                        "MENU_CACHE_USE_GROUPS" => "Y",
-                        "MENU_THEME" => "blue",
-                        "ROOT_MENU_TYPE" => "left",
-                        "USE_EXT" => "Y",
-                    )
-                ); ?>
+	"bitrix:menu", 
+	"catalog_hmenu", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"COMPONENT_TEMPLATE" => "catalog_hmenu",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "3",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "36000",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"MENU_THEME" => "blue",
+		"ROOT_MENU_TYPE" => "left",
+		"USE_EXT" => "Y"
+	),
+	false
+); ?>
             </div>
         </div>
 

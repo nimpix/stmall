@@ -160,9 +160,6 @@ if ($showTopPager)
 
 <div class="catalog-section bx-<?=$arParams['TEMPLATE_THEME']?> similar" data-entity="<?=$containerName?>">
     <div class="catalog-block-head">Похожие товары</div>
-    <div style="display: none;">
-		<? print_r ($arParams); ?>
-	</div>
 	<?
 	if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS']))
 	{
@@ -177,13 +174,15 @@ if ($showTopPager)
 		}
 		?>
 		<!-- items-container -->
-		<?
+        <?
+
+       $num = 1;
 		foreach ($arResult['ITEM_ROWS'] as $rowData)
 		{
 			$rowItems = array_splice($arResult['ITEMS'], 0, 4);
 			?>
-			<div class="<?=$rowData['CLASS']?>" data-entity="items-row">
-				<?
+			<div class="<?=$rowData['CLASS']?> product-adaptive-<?=$num;?>" data-entity="items-row">
+				<?  $num++;
 				switch ($rowData['VARIANT'])
 				{
 					case 0:
@@ -274,7 +273,7 @@ if ($showTopPager)
 								foreach ($rowItems as $item)
 								{
 									?>
-									<div class="col-sm-12 col-md-4 product-item-big-card">
+									<div class="col-6 col-md-4 product-item-big-card">
 										<div class="row">
 											<div class="col-md-12">
 												<?

@@ -153,6 +153,7 @@ $containerName = 'container-'.$navParams['NavNum'];
 
 
 <?
+
 $_SESSION['arNav_RESULT'] = $arResult['NAV_RESULT'];
 $_SESSION['arName'] =  $arResult['NAME'];
 $_SESSION['DEPTH'] = $arResult['DEPTH_LEVEL'];
@@ -209,7 +210,7 @@ $_SESSION['catalog_url'] = $arResult['ORIGINAL_PARAMETERS']['CURRENT_BASE_PAGE']
 								{
 									?>
                                     <!-- Карточка продукта-->
-									<div class="col-xs-1 col-sm-4 product-item-big-card">
+									<div class="col-sm-4 product-item-big-card">
 										<div class="row">
 											<div class="col-md-12">
 

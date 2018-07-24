@@ -15,7 +15,7 @@ function print_sections($iblock_id = 1, $sections = array()){
     {
         $custom_section['NAME'] = $arSect['NAME'];
         $custom_section['ID'] = $arSect['ID'];
-        $custom_section['URL'] = $arSect['LIST_PAGE_URL'].$arSect['SECTION_PAGE_URL']."/";
+        $custom_section['URL'] = $arSect['LIST_PAGE_URL'].$arSect['SECTION_PAGE_URL'];
         $custom_section['PICTURE'] = $arSect['PICTURE'];
 
         $custom_sections[] = $custom_section;

@@ -22,15 +22,13 @@ $currencyList = '';
 
 
 
-
-
 //get brend value and counter
 $res = CIBlockElement::GetList(
     array(),
     array("IBLOCK_ID" => $arParams["IBLOCK_ID"], "ID" => $arResult['ID'], "INCLUDE_SUBSECTIONS" => "Y"),
     false,
     false,
-    array("ID", "IBLOCK_ID", "LANG_DIR", "DETAIL_PAGE_URL", "PROPERTY_BREND", "SHOW_COUNTER","PROPERTY_MY_COUNTER")
+    array("ID", "IBLOCK_ID", "LANG_DIR", "DETAIL_PAGE_URL", "PROPERTY_BREND", "SHOW_COUNTER","PROPERTY_MY_COUNTER","PROPERTY_MOB_BANNER")
 );
 
 
@@ -40,7 +38,12 @@ while($ob = $res->GetNext())
     $tmps["BREND_VAL"] = $ob["PROPERTY_BREND_VALUE"];
     $tmps["COUNTER"] = $ob["SHOW_COUNTER"];
     if(empty($ob["PROPERTY_MY_COUNTER_VALUE"])) $ob["PROPERTY_MY_COUNTER_VALUE"] = 0;
-    $tmps["BUY_COUNTER"] = $ob["PROPERTY_MY_COUNTER_VALUE"];
+	$tmps["BUY_COUNTER"] = $ob["PROPERTY_MY_COUNTER_VALUE"];
+
+	// Мобильный баннер
+	$img_path = CFile::GetFileArray($ob["PROPERTY_MOB_BANNER_VALUE"]);
+	$mobpath = $img_path["SRC"];
+	//Мобильный баннер
 }
 //Sending data to init.php
 $_SESSION['BUY_COUNTER'] = $tmps["BUY_COUNTER"];
@@ -409,20 +412,19 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
                          
                                 <div class="col-xs-12 col-xs-12 px-3 px-md-0">
                                     <h1 class="bx-title"><?=$name?></h1>
-
-                                    <!--  Счетчики -->
-                                    <div class="view-panel schetchiki" style="display:none;">
-                                        <div class="cnt">Счетчик просмотров:<?=$tmps["COUNTER"];?></div>
-                                        <div class="buy_cnt">Количество покупок:<span><?=$tmps['BUY_COUNTER'];?></span></div>
-                                    </div>
                                     <? $priced = '';?>
                                     <? if(!empty($arResult['PROPERTIES']['old_price']['VALUE'])){
                                         $priced = 'со скидкой';
                                         ?>
                                     <div class="old-price"><?echo round($arResult['PROPERTIES']['old_price']['VALUE']);?> р.</div>
                                     <?}?>
-                                    <div class="product-item-detail-price-current" id="<?=$itemIds['PRICE_ID']?>"><span>Цена <?=$priced?>&nbsp;&nbsp;&nbsp;</span>
+                                    <div class="product-item-detail-price-current" id="<?=$itemIds['PRICE_ID']?>"><span><span class='prc-text'>Цена</span> <?=$priced?></span>
                                         <?=str_replace('руб.','р.',$price['PRINT_RATIO_PRICE'])?>
+									</div>
+									  <!--  Счетчики -->
+									<div class="view-panel schetchiki" style="display:none;">
+                                        <div class="cnt"><span><?=$tmps["COUNTER"];?></span></div>
+                                        <div class="buy_cnt"><span><?=$tmps['BUY_COUNTER'];?></span></div>
                                     </div>
                                 </div>
                       
@@ -1006,10 +1008,11 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 			</div>
 		</div>
         <div class="row no-gutters bottom-part-product">
-            <div class="col-xs-9 no-padding">
+            <div class="col-xs-12 col-md-9 no-padding">
                 <div class="col-xs-12 description">
                     <h3 class="description-title">Описание</h3>
                     <div class="description-body"><?=$arResult['DETAIL_TEXT'];?></div>
+					<div class="mob__banner-prod"><img src="<?=$mobpath;?>" alt=""></div>
                     <div class="ask-wrapper">
                         <div class="ask-form">
                            <span>Задать вопрос о товаре</span>
@@ -1098,7 +1101,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Товары",
-		"PAGE_ELEMENT_COUNT" => "3",
+		"PAGE_ELEMENT_COUNT" => "4",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PRICE_CODE" => array(
 			0 => "base_price",
@@ -1184,7 +1187,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
                     'USE_PRICE_COUNT' => $arParams['USE_PRICE_COUNT'],
                     'SHOW_PRICE_COUNT' => $arParams['SHOW_PRICE_COUNT'],
                     'DETAIL_PAGE_URL' => '/catalog/#SECTION_CODE#/#ELEMENT_CODE#/',
-                    'PAGE_ELEMENT_COUNT' => 3,
+                    'PAGE_ELEMENT_COUNT' => 4,
                     'SECTION_ELEMENT_ID' => $elementId,
 
                     "SET_TITLE" => "N",
@@ -1265,6 +1268,17 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
                     </ul>
 
                 </div>
+                <!-- FOOTER-MOBILE -->
+                <div class="col-xs-12 fmob-grid-container">
+                        <div class="fmob-grid">
+                            <div class="f-item-1"><a href="/">Главная</a></div>
+                            <div class="f-item-2"><a href="tel:+74950217733">Позвонить</a></div>
+                            <div class="f-item-3"><a href="">Написать</a></div>
+                            <div class="f-item-4"><a href="/favourites/">Избранное</a></div>
+                            <div class="f-item-5"><a href="/cart/">Корзина</a></div>
+                        </div>
+                </div>
+                <!-- FOOTER-MOBILE -->
 <!--                BANNER-->
                 <div class="col-xs-12 ">
                     <div class="banner">
@@ -1276,10 +1290,10 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
             </div>
 
 <!--            RIGHT SIDE-->
-            <div class="col-xs-3 no-padding">
+            <div class="col-12 col-md-3 no-padding right-sideblock__container">
                 <div class="right-sideblock">
                     <div class="delivery-1">
-                        <ul>
+                        <ul> 
                           <div><span>Доставка</span></div>
                             <li>Доставка осуществляется во все города России
                             </li>
@@ -1288,15 +1302,18 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
                             </li>
 <!--                            <li>Не продавайте запрещенные товары.</li>-->
                         </ul>
-                        <a href="http://st-mall.ru/dostavka-i-oplata/">Полные правила доставки</a>
+                        <a href="/dostavka-i-oplata/">Полные правила доставки</a>
                     </div>
+                    
                     <div class="delivery-2">
                         <ul>
                             <div><span>Оплата</span></div>
                             <li>Оплата наличными курьеру для малогабаритных товаров (для Москвы и МО)</li>
                             <li>Безналичная оплата для крупногабаритных товаров по 100% предоплате и для всех товаров с доставкой по России</li>
                         </ul>
+                        <a href="/dostavka-i-oplata/">Полные правила оплаты</a>
                     </div>
+                    
                     <div class="delivery-3">
                         <ul>
                             <div><span>Возврат</span></div>
@@ -1306,7 +1323,7 @@ $_SESSION['PROD_PRICE'] = $arResult['PRICES']['base_price']['PRINT_VALUE'];
 <!--                            <li>Полностью сохранен товарный вид;<br>сохранены потребительские свойства</li>-->
 <!--                            <li>Не нарушены пломбы и фабричные ярлык</li>-->
                         </ul>
-                        <a href="http://st-mall.ru/dostavka-i-oplata/">Полные правила доставки</a>
+                        <a href="/pravila-vozvrata/">Полные правила возврата</a>
                     </div>
                     <div class="delivery-4">
                         <?

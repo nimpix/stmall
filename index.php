@@ -173,13 +173,16 @@ $APPLICATION->SetTitle("");
     <div class="container" id="title-cat">
         <div class="row">
             <h3>Тренажеры для похудения</h3>
-            <button class="variant">Варианты</button>
+            <a class="variants-link" href="/vse-trenazhery-dlya-pohudeniya">Варианты</a>
         </div>
     </div>
     <div class="trainer">
         <div class="trainer-img">
-            <div class="tr-item" style="background:url('/bitrix/templates/stmall/images/tr1.png') no-repeat center;">
-                <a href="" class="href-one">Для тех кто хочет похудеть</a>
+            
+			<div class="tr-item" style="background:url('/bitrix/templates/stmall/images/tr1.png') no-repeat center;">
+			<a href="/vse-trenazhery-dlya-pohudeniya" class="tr-item-in">
+                <a href="/vse-trenazhery-dlya-pohudeniya" class="href-one">Для тех кто хочет похудеть</a>
+   			</a>
             </div>
             <? print_sections($iblock_id,array(1, 4, 3)); ?>
         </div>
@@ -191,13 +194,15 @@ $APPLICATION->SetTitle("");
 <div class="container" id="title-cat">
 	<div class="row">
 		<h3>Качаем пресс</h3>
-        <button class="variant">Варианты</button>
+        <a class="variants-link" href="/vse-trenazhery-dlya-pressa">Варианты</a>
 	</div>
 </div>
 <div class="trainer right-trainer">
 	<div class="trainer-img">
 		<div class="tr-item" style="background:url('/bitrix/templates/stmall/images/press3.jpg') no-repeat center;">
- <a href="" class="href-one">Для тех кто хочет накать пресс</a>
+		<a href="/vse-trenazhery-dlya-pressa" class="tr-item-in">
+ 			<a href="/vse-trenazhery-dlya-pressa" class="href-one">Для тех кто хочет накать пресс</a>
+		</a>
 		</div>
 		 <? print_sections($iblock_id,array(100,10,208)); ?>
 	</div>
@@ -208,13 +213,15 @@ $APPLICATION->SetTitle("");
 <div class="container" id="title-cat">
 	<div class="row">
 		<h3>Качаем ягодицы</h3>
-        <button class="variant">Варианты</button>
+        <a class="variants-link" href="/vse-trenazhery-dlya-yagodic">Варианты</a>
 	</div>
 </div>
 <div class="trainer">
 	<div class="trainer-img">
 		<div class="tr-item" style="background:url('/bitrix/templates/stmall/images/yagodicy.jpg') no-repeat center;">
- <a href="" class="href-one">Для тех кто хочет накачать ягодицы</a>
+		<a href="/vse-trenazhery-dlya-yagodic" class="tr-item-in">
+ 			<a href="/vse-trenazhery-dlya-yagodic" class="href-one">Для тех кто хочет накачать ягодицы</a>
+		</a>
 		</div>
 		 <? print_sections($iblock_id,array(14, 11, 4)); ?>
 	</div>
@@ -225,13 +232,15 @@ $APPLICATION->SetTitle("");
 <div class="container" id="title-cat">
 	<div class="row">
 		<h3>Качаем спину</h3>
-        <button class="variant">Варианты</button>
+		<a class="variants-link" href="/vse-trenazhery-dlya-spiny">Варианты</a>
 	</div>
 </div>
 <div class="trainer right-trainer">
 	<div class="trainer-img">
 		<div class="tr-item" style="background:url('/bitrix/templates/stmall/images/spina1.jpg') no-repeat center;">
- <a href="" class="href-one">Для тех кто хочет накачать спину</a>
+		<a href="/vse-trenazhery-dlya-spiny" class="tr-item-in">
+ 			<a href="/vse-trenazhery-dlya-spiny" class="href-one">Для тех кто хочет накачать спину</a>
+		</a>
 		</div>
 		 <? print_sections($iblock_id,array(236, 87, 11)); ?>
 	</div>

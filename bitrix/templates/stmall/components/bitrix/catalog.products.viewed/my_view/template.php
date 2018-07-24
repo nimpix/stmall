@@ -271,7 +271,7 @@ $containerName = 'catalog-products-viewed-container';
 								foreach ($rowItems as $item)
 								{
 									?>
-                                <div class="col-sm-12 col-md-4 product-item-big-card">
+                                <div class="col-6 col-md-4 product-item-big-card">
                                     <div class="row">
                                         <div class="col-md-12">
 

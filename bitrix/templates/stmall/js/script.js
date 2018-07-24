@@ -110,6 +110,21 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
 
   ///////////////////////////////////////////////////////READY//////////////////////////////////////////////////////////////////
   $(document).on('ready', function() {
+    //Замена в меню
+    var newMenuCat = $('.catalog-menu ul>li:last-child a').text().replace(/Профессиональные/g,'');
+    newMenuCat = newMenuCat.replace(/силовые/g,'Силовые');
+    $('.catalog-menu ul>li:last-child a').text(newMenuCat);
+
+    //Мобильный футер ссылки и иконки
+    $('div[class*=f-item]').click(function(e){
+        let iconHref = $(this).find('a').attr('href');
+        if(iconHref == ""){
+            e.preventDefault();
+            $('.popback,.form-2').fadeIn();    
+        }else{
+            location.href = iconHref;
+        }
+    });
 
     $('.form-3 #input1').attr('placeholder','Ваше имя');
     $('.form-3 #input2').attr('placeholder','Ваш телефон');
@@ -119,6 +134,9 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
     //Махинации в мобильной версии
     if(document.body.clientWidth < 769){
       $('.mobile-phone a').empty();
+      let elem = $(".right-sideblock__container");
+      let parent = $('.similar');
+      parent.after(elem);
     }
 
 

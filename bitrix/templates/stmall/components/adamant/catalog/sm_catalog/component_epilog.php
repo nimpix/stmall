@@ -1,12 +1,13 @@
 <!--Мета-тэги для каталога-->
 <?
-$arResult['NAME'] = $_SESSION['PROD_NAME'];
+$_SESSION['arName'] = $_SESSION['arName']." ".$_SESSION['brand_name_title'];
+$arResult['NAME'] = $_SESSION['PROD_NAME']." ".$_SESSION['brand_name_title'];
 $arResult['PRICES']['base_price']['PRINT_VALUE'] = $_SESSION['PROD_PRICE'];
 //Для продукта теги
 if(isset($_SESSION['PROD_NAME']) && isset($_SESSION['PROD_PRICE'])){
     unset($_SESSION['PROD_NAME']);
     unset($_SESSION['PROD_PRICE']);
-
+    
     $APPLICATION->SetPageProperty("title", $arResult['NAME']." купить в интернет-магазине");
     $APPLICATION->SetPageProperty("description", strtolower($arResult['NAME']).' за '.$arResult['PRICES']['base_price']['PRINT_VALUE'].' в интернет-магазине Sport Mall. ➤ Доставка по России от 7 дней. ➤ Можно купить онлайн за 5 минут.');
     $APPLICATION->SetPageProperty("keywords", strtolower($arResult['NAME']));

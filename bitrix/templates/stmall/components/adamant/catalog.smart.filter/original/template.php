@@ -775,6 +775,8 @@ $rcnt = 0;
 ?>
 
 	<?
+    $_SESSION['brand_name_title'] = $brand_val;
+
 	$this->SetViewTarget('h1_brand');
 	 print ' '.$brand_val;
 	$this->EndViewTarget();
