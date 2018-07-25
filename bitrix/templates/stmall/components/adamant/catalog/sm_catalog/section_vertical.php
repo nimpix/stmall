@@ -38,6 +38,11 @@ else
             </h1>
 
         </div>
+        <div class="btn-filter-group">
+            <div class="mob-filter__categories">Подкатегории<i class="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div class="mob-filter__filter">Фильтр<i class="fa fa-caret-down" aria-hidden="true"></i></div>
+        </div>
+        <div class="filter-categories-tab"></div>
 	
  <?
 
@@ -587,7 +592,56 @@ if ($isFilter || $isSidebar): ?>
 
 	</div>
 
+    <div class="form-2">
+        <div class="form-main">
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:form",
+                "my_product_form",
+                Array(
+                    "AJAX_MODE" => "N",
+                    "AJAX_OPTION_ADDITIONAL" => "",
+                    "AJAX_OPTION_HISTORY" => "N",
+                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_STYLE" => "Y",
+                    "CACHE_TIME" => "3600",
+                    "CACHE_TYPE" => "A",
+                    "CHAIN_ITEM_LINK" => "",
+                    "CHAIN_ITEM_TEXT" => "",
+                    "EDIT_ADDITIONAL" => "N",
+                    "EDIT_STATUS" => "Y",
+                    "IGNORE_CUSTOM_TEMPLATE" => "Y",
+                    "NOT_SHOW_FILTER" => "",
+                    "NOT_SHOW_TABLE" => "",
+                    "RESULT_ID" => $_REQUEST[RESULT_ID],
+                    "SEF_FOLDER" => "",
+                    "SEF_MODE" => "Y",
+                    "SEF_URL_TEMPLATES" => Array("edit"=>"#WEB_FORM_ID#/edit/#RESULT_ID#/","list"=>"#WEB_FORM_ID#/list/","new"=>"#WEB_FORM_ID#/","view"=>"#WEB_FORM_ID#/view/#RESULT_ID#/"),
+                    "SHOW_ADDITIONAL" => "N",
+                    "SHOW_ANSWER_VALUE" => "N",
+                    "SHOW_EDIT_PAGE" => "N",
+                    "SHOW_LIST_PAGE" => "N",
+                    "SHOW_STATUS" => "Y",
+                    "SHOW_VIEW_PAGE" => "N",
+                    "START_PAGE" => "new",
+                    "SUCCESS_URL" => "",
+                    "USE_EXTENDED_ERRORS" => "N",
+                    "WEB_FORM_ID" => 2
+                )
+            );?>
+        </div>
+    </div>
 
 </div>
 </div>
 </div>
+<!-- FOOTER-MOBILE -->
+<div class="col-xs-12 fmob-grid-container">
+    <div class="fmob-grid">
+        <div class="f-item-1"><a href="/">Главная</a></div>
+        <div class="f-item-2"><a href="tel:+74950217733">Позвонить</a></div>
+        <div class="f-item-3"><a href="">Написать</a></div>
+        <div class="f-item-4"><a href="/favourites/">Избранное</a></div>
+        <div class="f-item-5"><a href="/cart/">Корзина</a></div>
+    </div>
+</div>
+<!-- FOOTER-MOBILE -->

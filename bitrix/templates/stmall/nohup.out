@@ -1,0 +1,303 @@
+>>> Sass is watching for changes. Press Ctrl-C to stop.
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 1609: Invalid CSS after "  top: 50px; ": expected "}", was "!important; /*6...")
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map

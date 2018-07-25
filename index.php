@@ -201,7 +201,7 @@ $APPLICATION->SetTitle("");
 	<div class="trainer-img">
 		<div class="tr-item" style="background:url('/bitrix/templates/stmall/images/press3.jpg') no-repeat center;">
 		<a href="/vse-trenazhery-dlya-pressa" class="tr-item-in">
- 			<a href="/vse-trenazhery-dlya-pressa" class="href-one">Для тех кто хочет накать пресс</a>
+ 			<a href="/vse-trenazhery-dlya-pressa" class="href-one">Для тех кто хочет накачать пресс</a>
 		</a>
 		</div>
 		 <? print_sections($iblock_id,array(100,10,208)); ?>

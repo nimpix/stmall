@@ -104,9 +104,18 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
     $('.form-3 .form-group input[type=hidden]').val(variant);
     $('.popback,.form-3').fadeIn();
   });
+
   $(document).on('click','.favor .basket-item-actions-remove',function () {
   location.href = location;
   });
+
+ $(document).on('scroll',function () {
+   if($(window).scrollTop() > 0){
+     $('.fmob-grid-container').show();
+   }else{
+     $('.fmob-grid-container').hide();
+   }
+ });
 
   ///////////////////////////////////////////////////////READY//////////////////////////////////////////////////////////////////
   $(document).on('ready', function() {
@@ -270,7 +279,6 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
       $(this).removeClass('cat-active');
     });
 
-
     //Desktop-menu
     $('.catalog-dropdown').hover(function() {
       $('.catalog-dropdown .menu-desk').stop(true, true).slideToggle();
@@ -284,6 +292,17 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
       if ($(".trainer").hasClass('right-trainer')) {
         $('.trainer').removeClass('right-trainer');
       }
+      $('.filter-categories-tab').append($('.filter .bx_sitemap')); //Переносим категории в блоке фильтр в планшиках
+      $('.filter-categories-tab').append($('.filter'));
+
+      $('.mob-filter__categories').click(function(){
+        $('.filter-categories-tab .bx_sitemap').stop(true,true).slideToggle().toggleClass('active');
+        $(this).find('.fa-caret-down').toggleClass('fa-caret-up');
+      });
+      $('.mob-filter__filter').click(function(){
+        $('.filter-categories-tab .filter').stop(true,true).slideToggle().toggleClass('active');
+        $(this).find('.fa-caret-down').toggleClass('fa-caret-up');
+      });
     }
 
     //Mobile menu
