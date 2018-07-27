@@ -130,7 +130,7 @@ CIBlockElement::SetPropertyValues($arResult['ID'], $arResult["IBLOCK_ID"], $arRe
 <script type="text/javascript">
  var link = location.href;
  var img = document.querySelector('.detail_picture');
-console.log(link);
+
 	document.getElementById('soc-share').innerHTML = VK.Share.button({
 		url: link,
 	  title: document.title,

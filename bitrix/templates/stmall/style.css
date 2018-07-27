@@ -626,7 +626,6 @@ body {
   border-left: none; }
 
 .errortext {
-  padding-left: 15px;
   font-size: 16px; }
 
 .pt60 {
@@ -3636,88 +3635,98 @@ div[data-entity="basket-total-block"] {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1;
     grid-column-gap: 5px; }
-    .fmob-grid-container .fmob-grid div.f-item-1 a {
-      text-align: center;
-      font: 13px "RobotoRegular";
-      display: block;
-      width: 100%;
-      color: #000;
-      margin-top: 7px; }
-      @media (max-width: 340px) {
-        .fmob-grid-container .fmob-grid div.f-item-1 a {
-          font: 10px "RobotoRegular"; } }
-    .fmob-grid-container .fmob-grid div.f-item-1:before {
-      content: url("/upload/ficon1.png");
-      display: flex;
-      justify-content: center;
-      height: 33px;
-      position: relative; }
-    .fmob-grid-container .fmob-grid div.f-item-2 a {
-      text-align: center;
-      font: 13px "RobotoRegular";
-      display: block;
-      width: 100%;
-      color: #000;
-      margin-top: 7px; }
-      @media (max-width: 340px) {
-        .fmob-grid-container .fmob-grid div.f-item-2 a {
-          font: 10px "RobotoRegular"; } }
-    .fmob-grid-container .fmob-grid div.f-item-2:before {
-      content: url("/upload/ficon2.png");
-      display: flex;
-      justify-content: center;
-      height: 33px;
-      position: relative;
-      top: 4px; }
-    .fmob-grid-container .fmob-grid div.f-item-3 a {
-      text-align: center;
-      font: 13px "RobotoRegular";
-      display: block;
-      width: 100%;
-      color: #000;
-      margin-top: 7px; }
-      @media (max-width: 340px) {
-        .fmob-grid-container .fmob-grid div.f-item-3 a {
-          font: 10px "RobotoRegular"; } }
-    .fmob-grid-container .fmob-grid div.f-item-3:before {
-      content: url("/upload/ficon3.png");
-      display: flex;
-      justify-content: center;
-      height: 33px;
-      position: relative; }
-    .fmob-grid-container .fmob-grid div.f-item-4 a {
-      text-align: center;
-      font: 13px "RobotoRegular";
-      display: block;
-      width: 100%;
-      color: #000;
-      margin-top: 7px; }
-      @media (max-width: 340px) {
-        .fmob-grid-container .fmob-grid div.f-item-4 a {
-          font: 10px "RobotoRegular"; } }
-    .fmob-grid-container .fmob-grid div.f-item-4:before {
-      content: url("/upload/ficon4.png");
-      display: flex;
-      justify-content: center;
-      height: 33px;
-      position: relative;
-      top: 4px; }
-    .fmob-grid-container .fmob-grid div.f-item-5 a {
-      text-align: center;
-      font: 13px "RobotoRegular";
-      display: block;
-      width: 100%;
-      color: #000;
-      margin-top: 7px; }
-      @media (max-width: 340px) {
-        .fmob-grid-container .fmob-grid div.f-item-5 a {
-          font: 10px "RobotoRegular"; } }
-    .fmob-grid-container .fmob-grid div.f-item-5:before {
-      content: url("/upload/ficon5.png");
-      display: flex;
-      justify-content: center;
-      height: 33px;
-      position: relative; }
+    .fmob-grid-container .fmob-grid div.f-item-1 {
+      cursor: pointer; }
+      .fmob-grid-container .fmob-grid div.f-item-1 a {
+        text-align: center;
+        font: 13px "RobotoRegular";
+        display: block;
+        width: 100%;
+        color: #000;
+        margin-top: 7px; }
+        @media (max-width: 340px) {
+          .fmob-grid-container .fmob-grid div.f-item-1 a {
+            font: 10px "RobotoRegular"; } }
+      .fmob-grid-container .fmob-grid div.f-item-1:before {
+        content: url("/upload/ficon1.png");
+        display: flex;
+        justify-content: center;
+        height: 33px;
+        position: relative; }
+    .fmob-grid-container .fmob-grid div.f-item-2 {
+      cursor: pointer; }
+      .fmob-grid-container .fmob-grid div.f-item-2 a {
+        text-align: center;
+        font: 13px "RobotoRegular";
+        display: block;
+        width: 100%;
+        color: #000;
+        margin-top: 7px; }
+        @media (max-width: 340px) {
+          .fmob-grid-container .fmob-grid div.f-item-2 a {
+            font: 10px "RobotoRegular"; } }
+      .fmob-grid-container .fmob-grid div.f-item-2:before {
+        content: url("/upload/ficon2.png");
+        display: flex;
+        justify-content: center;
+        height: 33px;
+        position: relative;
+        top: 4px; }
+    .fmob-grid-container .fmob-grid div.f-item-3 {
+      cursor: pointer; }
+      .fmob-grid-container .fmob-grid div.f-item-3 a {
+        text-align: center;
+        font: 13px "RobotoRegular";
+        display: block;
+        width: 100%;
+        color: #000;
+        margin-top: 7px; }
+        @media (max-width: 340px) {
+          .fmob-grid-container .fmob-grid div.f-item-3 a {
+            font: 10px "RobotoRegular"; } }
+      .fmob-grid-container .fmob-grid div.f-item-3:before {
+        content: url("/upload/ficon3.png");
+        display: flex;
+        justify-content: center;
+        height: 33px;
+        position: relative; }
+    .fmob-grid-container .fmob-grid div.f-item-4 {
+      cursor: pointer; }
+      .fmob-grid-container .fmob-grid div.f-item-4 a {
+        text-align: center;
+        font: 13px "RobotoRegular";
+        display: block;
+        width: 100%;
+        color: #000;
+        margin-top: 7px; }
+        @media (max-width: 340px) {
+          .fmob-grid-container .fmob-grid div.f-item-4 a {
+            font: 10px "RobotoRegular"; } }
+      .fmob-grid-container .fmob-grid div.f-item-4:before {
+        content: url("/upload/ficon4.png");
+        display: flex;
+        justify-content: center;
+        height: 33px;
+        position: relative;
+        top: 4px; }
+    .fmob-grid-container .fmob-grid div.f-item-5 {
+      cursor: pointer; }
+      .fmob-grid-container .fmob-grid div.f-item-5 a {
+        text-align: center;
+        font: 13px "RobotoRegular";
+        display: block;
+        width: 100%;
+        color: #000;
+        margin-top: 7px; }
+        @media (max-width: 340px) {
+          .fmob-grid-container .fmob-grid div.f-item-5 a {
+            font: 10px "RobotoRegular"; } }
+      .fmob-grid-container .fmob-grid div.f-item-5:before {
+        content: url("/upload/ficon5.png");
+        display: flex;
+        justify-content: center;
+        height: 33px;
+        position: relative; }
 
 .mob-filter__categories {
   display: none; }
@@ -3734,6 +3743,61 @@ div[data-entity="basket-total-block"] {
 
 .btn-filter-group {
   width: 100%; }
+
+.ps_logo {
+  text-align: right; }
+  .ps_logo .pay_name, .ps_logo .paysystem_name {
+    display: none; }
+  .ps_logo img {
+    display: none; }
+
+.order div {
+  font-family: "RobotoRegular" !important; }
+
+.sale_order_full_table {
+  margin-top: 50px;
+  font-family: "RobotoRegular" !important; }
+  .sale_order_full_table .header {
+    margin-bottom: 30px;
+    float: right;
+    width: 40%;
+    text-align: right; }
+  .sale_order_full_table div {
+    width: 596.0674015748pt !important;
+    margin-bottom: 60px !important; }
+    @media (max-width: 768px) {
+      .sale_order_full_table div {
+        width: 100% !important;
+        padding: 0 !important; } }
+
+.pdf-download:hover {
+  color: var(--salat);
+  text-decoration: none; }
+
+.pdf-download {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+  font-size: 20px; }
+
+.bx-soa-editstep {
+  font-size: 15px !important; }
+
+.btn-primary {
+  background-color: var(--salat) !important;
+  outline: none !important;
+  border: none !important; }
+
+#bx-soa-order-form {
+  width: 100% !important; }
+
+.reg-form {
+  width: 25rem; }
+
+.reg-response {
+  margin-top: 10px;
+  color: red; }
 
 .pohudeine .banner_title {
   background: url("/upload/dlya-pohudeniya.jpg") center no-repeat;

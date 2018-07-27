@@ -110,15 +110,22 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
   });
 
  $(document).on('scroll',function () {
-   if($(window).scrollTop() > 0){
-     $('.fmob-grid-container').show();
-   }else{
-     $('.fmob-grid-container').hide();
+   if(document.body.clientWidth < 769) {
+     if ($(window).scrollTop() > 0) {
+       $('.fmob-grid-container').show();
+     } else {
+       $('.fmob-grid-container').hide();
+     }
    }
  });
 
   ///////////////////////////////////////////////////////READY//////////////////////////////////////////////////////////////////
   $(document).on('ready', function() {
+  //плейсхолдеры для логина
+    $('#user_login').attr('placeholder','ваш телефон');
+    $('#user_pas').attr('placeholder','пароль из sms');
+
+
     //Замена в меню
     var newMenuCat = $('.catalog-menu ul>li:last-child a').text().replace(/Профессиональные/g,'');
     newMenuCat = newMenuCat.replace(/силовые/g,'Силовые');
@@ -217,10 +224,10 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
 
     //Форма
     $('.button-call button,#footer-call').click(function() {
-      $('.popback,.form-1').fadeIn();
+      $('.popback,.form-1').fadeIn(100);
     });
     $('.ask-form span').click(function() {
-      $('.popback,.form-2').fadeIn();
+      $('.popback,.form-2').fadeIn(100);
     });
 
 

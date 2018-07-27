@@ -742,7 +742,7 @@ body {
 }
 
 .errortext {
-  padding-left: 15px;
+ // padding-left: 15px;
   font-size: 16px;
 }
 
@@ -4199,6 +4199,7 @@ div[data-entity="basket-total-block"] {
       @for $i from 1 through 5 {
 
       & div.f-item-#{$i}{
+        cursor:pointer;
         & a{
           text-align: center;
           font:13px "RobotoRegular";
@@ -4237,3 +4238,64 @@ div[data-entity="basket-total-block"] {
 }
 
 .btn-filter-group{width:100%;}
+.ps_logo{
+  text-align:right;
+  & .pay_name, .paysystem_name{
+    display:none;
+  }
+  & img {
+    display: none;}
+}
+.order div{
+  font-family: "RobotoRegular" !important;
+}
+.sale_order_full_table{
+  margin-top: 50px;
+  font-family: "RobotoRegular" !important;
+  & .header{
+    margin-bottom:30px;
+    float:right;
+    width:40%;
+    text-align:right;
+  }
+  & div{
+    width: 596.0674015748pt !important;
+    margin-bottom: 60px !important;
+    @media (max-width:768px){
+      width: 100% !important;
+      padding:0 !important;
+    }
+  }
+  & .sign tr:nth-child(3){
+    //display: none;
+    }
+}
+.pdf-download:hover{
+  color:var(--salat);
+  text-decoration:none;
+}
+.pdf-download{
+  display: block;
+  width:100%;
+  text-align:left;
+  margin-top: 30px;
+  font-size: 20px;
+}
+.bx-soa-editstep{
+  font-size: 15px !important;
+}
+.btn-primary{
+  background-color:var(--salat) !important;
+  outline:none !important;
+  border:none !important;
+}
+#bx-soa-order-form{
+  width:100% !important;
+}
+.reg-form{
+  width:25rem;
+}
+.reg-response{
+  margin-top:10px;
+  color:red;
+}

@@ -53,8 +53,11 @@ if ($arParams["SET_TITLE"] == "Y")
 						{
 							?>
 							<br /><br />
-
-							<table class="sale_order_full_table">
+                            <? $order_id = urlencode(urlencode($arResult["ORDER"]["ACCOUNT_NUMBER"]));?>
+                            <? if($arPaySystem['IS_AFFORD_PDF'] == 1){?>
+                            <a class ="pdf-download" href="<?=$arParams["PATH_TO_PAYMENT"]."?ORDER_ID=".$order_id."&pdf=1&DOWNLOAD=Y"?>">Скачать счет в PDF формате</a>
+							<? } ?>
+                            <table class="sale_order_full_table">
 								<tr>
 									<td class="ps_logo">
 										<div class="pay_name"><?=Loc::getMessage("SOA_PAY") ?></div>
@@ -63,7 +66,7 @@ if ($arParams["SET_TITLE"] == "Y")
 										<br/>
 									</td>
 								</tr>
-								<tr>
+								<tr> 
 									<td>
 										<? if (strlen($arPaySystem["ACTION_FILE"]) > 0 && $arPaySystem["NEW_WINDOW"] == "Y" && $arPaySystem["IS_CASH"] != "Y"): ?>
 											<?

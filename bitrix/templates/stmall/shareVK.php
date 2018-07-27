@@ -4,7 +4,7 @@ global $APPLICATION;
 function getShareCount($id,$url){
   $uri = $url;
   $uri = explode("?",$uri);
-$$uri = urlencode($uri);
+  $uri = urlencode($uri);
   $vkUrl = "https://vk.com/share.php?act=count&index=1&url=https://st-mall.ru".$uri[0];
 
 

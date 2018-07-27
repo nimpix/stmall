@@ -98,6 +98,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/bitrix/templates/stmall/shareVK.php');
 
 
     </div>
+  
     <div class="clearfix"> </div>
     <div style="clear:both;">
         <? //ПОЛУЧАЕМ И ВЫВОДИМ КОЛИЧЕСТВО ПРОСМОТРОВ

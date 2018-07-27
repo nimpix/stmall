@@ -32,6 +32,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
         <div><img src="https://mc.yandex.ru/watch/49112977" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript> <!-- /Yandex.Metrika counter -->
     <script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

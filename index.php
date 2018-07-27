@@ -358,7 +358,6 @@ $APPLICATION->SetTitle("");
  <!--Рекомендации-->
 <div class="container" id="recomend">
 	<h3>Рекомендации по тренировкам дома</h3>
-
     <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"my_news",
