@@ -13,14 +13,18 @@ $APPLICATION->SetTitle("");
 		<div class="row banner-wrap">
 			<div class="banner-text col-lg-8 col-md-auto">
 				<div>
-					<h1>Покупайте прямо сейчас!</h1>
-					<h3>Беговые дорожки</h3>
-					<span>Качественное оборудование по доступным ценам</span> <button>Выбрать</button>
+					<h1>Беговые дорожки DFIT</h1>
+					<h3>для профессиональных тренировок дома</h3>
+                    <ul class="banner-list">
+                        <li><span>Больше 48 программ</span></li>
+                        <li><span>Изменяемый угол наклона</span></li>
+                        <li><span>Безупречная амортизация</span></li>
+                        <li><span>Гарантия 2 года</span></li>
+                    </ul>
+					<button>Посмотреть</button>
 				</div>
 			</div>
-			<div class="banner-img col-lg-4 col-md-auto">
- <img src="/bitrix/templates/stmall/images/banner-img.png" alt="">
-			</div>
+
 		</div>
 	</div>
 </div>

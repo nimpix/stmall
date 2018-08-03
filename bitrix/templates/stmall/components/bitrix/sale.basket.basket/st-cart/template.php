@@ -160,47 +160,24 @@ if (empty($arResult['ERROR_MESSAGE']))
 			<?
 		}
 		?>
-<!---->
-<!--		<div class="row">-->
-<!--			<div class="col-xs-12">-->
-<!--				<div class="alert alert-warning alert-dismissable" id="basket-warning" style="display: none;">-->
-<!--					<span class="close" data-entity="basket-items-warning-notification-close">&times;</span>-->
-<!--					<div data-entity="basket-general-warnings"></div>-->
-<!--					<div data-entity="basket-item-warnings">-->
-<!--						--><?//=Loc::getMessage('SBB_BASKET_ITEM_WARNING')?>
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!---->
+        <!--        Плашка сверху-->
+        <div class="row no-gutters justify-content-center tumbler-container pl-4 w-100">
+            <div class="tumbler">
+                <div class="tumbler-green"></div>
+                <div class="ticon-1 ticon-green tcontent-white-1"><span>Список покупок</span></div>
+                <div class="ticon-2"><span>Подтверждение</span></div>
+                <div class="ticon-3"><span>Оформление заказа</span></div>
+            </div>
+        </div>
+        <!--        Плашка сверху-->
+				<!-- кол-во -->
+				<!-- count($arResult['GRID']['ROWS'] -->
+				<div class="cart-quantity-title">Корзина <span></span></div>
+				<!-- кол-во -->
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="basket-items-list-wrapper basket-items-list-wrapper-height-fixed basket-items-list-wrapper-light<?=$displayModeClass?>"
 					id="basket-items-list-wrapper">
-<!--                    -->
-<!--					<div class="basket-items-list-header" data-entity="basket-items-list-header">-->
-<!--						<div class="basket-items-search-field" data-entity="basket-filter">-->
-<!--							<div class="form has-feedback">-->
-<!--								<input type="text" class="form-control"-->
-<!--									placeholder="--><?//=Loc::getMessage('SBB_BASKET_FILTER')?><!--"-->
-<!--									data-entity="basket-filter-input">-->
-<!--								<span class="form-control-feedback basket-clear" data-entity="basket-filter-clear-btn"></span>-->
-<!--							</div>-->
-<!--						</div>-->
-<!--						<div class="basket-items-list-header-filter">-->
-<!--							<a href="javascript:void(0)" class="basket-items-list-header-filter-item active"-->
-<!--								data-entity="basket-items-count" data-filter="all" style="display: none;"></a>-->
-<!--							<a href="javascript:void(0)" class="basket-items-list-header-filter-item"-->
-<!--								data-entity="basket-items-count" data-filter="similar" style="display: none;"></a>-->
-<!--							<a href="javascript:void(0)" class="basket-items-list-header-filter-item"-->
-<!--								data-entity="basket-items-count" data-filter="warning" style="display: none;"></a>-->
-<!--							<a href="javascript:void(0)" class="basket-items-list-header-filter-item"-->
-<!--								data-entity="basket-items-count" data-filter="delayed" style="display: none;"></a>-->
-<!--							<a href="javascript:void(0)" class="basket-items-list-header-filter-item"-->
-<!--								data-entity="basket-items-count" data-filter="not-available" style="display: none;"></a>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--                    -->
 					<div class="basket-items-list-container" id="basket-items-list-container">
 						<div class="basket-items-list-overlay" id="basket-items-list-overlay" style="display: none;"></div>
 						<div class="basket-items-list" id="basket-item-list">
@@ -275,9 +252,10 @@ else
 
 ?>
 
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
 <script>
-  //  var endCart = false;
-  //
+
    function Refresh(){
      clearInterval(timerCount);
      $('.basket-items-list-wrapper').remove();
@@ -308,11 +286,12 @@ else
 
   },100);
   //
-  var timerCount =setInterval(function(){
+  var timerCount = setInterval(function(){
     let itcount = $("#basket-item-table .basket-items-list-item-container").length;
+		let ptitle = "";
+		ptitle = (itcount == 1) ? "товар": "товара";
+		$('.cart-quantity-title span').text("("+itcount+" "+ptitle+")");
     if($('#basket-item-table .basket-items-list-item-container-expend').length == 1) $('.basket-items-list-item-container-expend').remove();
-  //  $('.cart-price').html($('.basket-coupon-block-total-price-current').text());
-  //  $('.cart-count').text(itcount);
     if(itcountzero == 0 || itcount == 0){
         endCart = true;
       $("#basket-root").empty().append('<div class="row"></div>');
@@ -320,5 +299,44 @@ else
     }
   },10);
 
+	//Меняем заголовки у цены и т.д.
 
+$.each($('.basket-item-price-title'),function(i,e){
+	let parent = $(this).parent();
+	$(e).detach().prependTo(parent);
+});
+
+$.each($('.basket-item-amount-field-description'),function() {
+	let parent = $(this).parent().parent();
+	$(this).text('Количество');
+	$(this).detach().prependTo(parent);
+});
+
+$('.cart-container .basket-checkout-container').prepend('<div class="clear-cart">Очистить корзину</div>')
+
+//Плашка в корзине
+	if(document.body.clientWidth < 650){
+	var offsetTicon1 = $('.ticon-1').offset().left;
+	$('.tumbler-green').css('width',offsetTicon1-30+"px");
+	}
+
+//очищение корзины
+$('.clear-cart').click(function(){
+	setTimeout(()=>{
+		axios.post('/bitrix/templates/stmall/clearcart.php')
+					.then(function (response) {
+							//console.log(_.capitalize(response.data.answer));
+							location.reload();
+					})
+					.catch(function (error) {
+						alert('Ошибка! Не могу связаться с API. ' + error);
+					})
+				});
+});
+
+//Продолжить покупки
+$('.basket-checkout-block-btn').prepend('<button class="back-catalog">Продолжить покупки</button>');
+$('.back-catalog').click(function() {
+	location.href = "https://st-mall.ru/catalog/"
+});
 </script>

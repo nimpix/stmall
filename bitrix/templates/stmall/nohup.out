@@ -434,3 +434,746 @@ SignalException: SIGTERM
 >>> Change detected to: sass/_template_styles.scss
       write style.css
       write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4329: Invalid CSS after ".": expected class name, was ".bx-breadcrumb")
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4348: Invalid CSS after "}": expected selector or at-rule, was "}")
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4354: Invalid US-ASCII character "\xD0")
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4354: Invalid US-ASCII character "\xD0")
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4354: Invalid US-ASCII character "\xD0")
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4354: Invalid US-ASCII character "\xD0")
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4354: Invalid US-ASCII character "\xD0")
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_adaptive.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4534: Invalid CSS after "...rgin-left: 40px": expected "{", was ";")
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4434: ".tumbler-green" failed to @extend "tumbler-main".
+The selector "tumbler-main" was not found.
+Use "@extend tumbler-main !optional" if the extend should be able to fail.
+)
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss

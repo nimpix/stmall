@@ -125,7 +125,6 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
     $('#user_login').attr('placeholder','ваш телефон');
     $('#user_pas').attr('placeholder','пароль из sms');
 
-
     //Замена в меню
     var newMenuCat = $('.catalog-menu ul>li:last-child a').text().replace(/Профессиональные/g,'');
     newMenuCat = newMenuCat.replace(/силовые/g,'Силовые');
@@ -136,7 +135,7 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
         let iconHref = $(this).find('a').attr('href');
         if(iconHref == ""){
             e.preventDefault();
-            $('.popback,.form-2').fadeIn();    
+            $('.popback,.form-2').fadeIn();
         }else{
             location.href = iconHref;
         }
@@ -146,7 +145,7 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
     $('.form-3 #input2').attr('placeholder','Ваш телефон');
     $('.form-3 textarea').attr('placeholder','Опишите свою потребность или оставьте поле пустым');
     $('.form-4 .form-group>input').attr('placeholder','Телефон');
-    
+
     //Махинации в мобильной версии
     if(document.body.clientWidth < 769){
       $('.mobile-phone a').empty();
@@ -219,7 +218,7 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
 
     //Кнопка на баннере
     $('.banner-wrap button').click(function() {
-      location.href = 'http://st-mall.ru/catalog/begovye-dorozhki/';
+      location.href = 'https://st-mall.ru/catalog/begovye-dorozhki/dfit';
     });
 
     //Форма
@@ -315,7 +314,7 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
     //Mobile menu
     if (document.body.clientWidth <= 788) {
 
-      
+
       $('.catalog-dropdown').click(function() {
         if ($('.mob-menu').hasClass('collapsed-menu')) {
           $('.mob-menu').stop(true, true).removeClass('collapsed-menu').slideUp();
@@ -348,7 +347,7 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
         } else {
           $('.mobpanelsearch').addClass('active-search').fadeIn();
         }
-        
+
       });
     }else{
       $('.mobile-menu .mobile-search').click(() => {
@@ -402,14 +401,7 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
     $('.bx-filter-input-checkbox input[checked=checked]').parent().find('.bx-filter-param-text').addClass('active-check');
     $('.bx-filter-input-checkbox input[checked=checked]').parent().find('.flagcheck').css('display', 'block');
     //
-    //Аккордеоны в section-list в каталоге
-    // $.each($('.section-list-wrapper'), function() {
-    //   let current = $(this).find("li ul");
-    //   let newItem = current.parent().find('>.bx_sitemap_li_title');
-    //   if (current.length > 0) {
-    //     $('<i class="fa fa-caret-down" aria-hidden="true"></i>').insertAfter(newItem);
-    //   }
-    // });
+
     //Открываем первые три(1-й уже открыт)
     $('.bx-filter-section .bx-filter-parameters-box .tcount1,.bx-filter-section .bx-filter-parameters-box .tcount2').addClass('active-title');
     $('.active-title').find('.fa-caret-down').removeClass('fa-caret-down').addClass('fa-caret-up');
@@ -438,6 +430,7 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
     });
 
     $('.catalog').parent().addClass('no-gutters');
+
 
 
 
