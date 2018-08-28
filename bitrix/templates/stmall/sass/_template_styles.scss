@@ -2068,9 +2068,9 @@ label[for=USER_REMEMBER_frm] {
 }
 
 .border-top {
-  border: 1px solid #e8e8e8;
+ // border: 1px solid #e8e8e8;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   @media(max-width:768px){
     display:none;
   }
@@ -2096,18 +2096,47 @@ label[for=USER_REMEMBER_frm] {
   font-size: 26px;
   text-transform: uppercase;
   color: var(--color-main);
-  margin: 5px 0 15px -2px;
+  margin: 0px 0 15px -2px;
 }
 
 .bx-breadcrumb-item a span, .bx-breadcrumb-item span {
   font-family: "CorbelRegular" !important;
-  font-size: 17px !important;
+  font-size: 12px !important;
   color: var(--color-main);
 }
+.bx-breadcrumb-item:after{
+  content:"/";
+  display:inline-block;
+  font-size:13px;
+  text-decoration:none !important;
+}
+.bx-breadcrumb-item-last:after{
+  content:"";
+}
+.return-link a:after{
+  content:"";
+  font-size:12px; 
+  text-decoration:none !important;
+}
+.return-link:after{
+  content:"";
+  text-decoration:none !important;
+}
 
+.green-nav{
+  color:var(--salat) !important;
+}
 .bx-breadcrumb-item a span {
   text-decoration: underline;
-  margin-right: 28px;
+  margin-right: 7px !important;
+}
+.return-link a span{
+  margin-right:0px !important;
+}
+.return-link{
+  margin-right:15px !important;
+  position: relative;
+  top:0px;
 }
 
 .bx-breadcrumb-item a span:hover {
@@ -3318,12 +3347,12 @@ input[data-entity="basket-filter-input"] {
   height: 350px;
   position: fixed;
   left: 50%;
-  border: 1px solid #55d244;
+  border: none;
   border-radius: 2px;
   top: 50%;
   margin-left: -150px;
   margin-top: -200px;
-  background: var(--salat);
+  background: url('/bitrix/templates/stmall/images/form3-bg.png');
   z-index: 20000;
   display: none;
 }
@@ -3367,7 +3396,7 @@ form[name='variant_form'] {
   display: block;
   clear: both;
   font-family: "CorbelRegular";
-  color: #ffffff;
+  color: #000000;
   font-size: 14px;
   font-weight: normal;
 }
@@ -3375,7 +3404,7 @@ form[name='variant_form'] {
 .form-main input {
   margin-bottom: 15px;
   background: #FFFFFF;
-  border: none;
+  border: 1px solid var(--salat);
   height: 30px;
   border-radius: 2px;
   width: 100%;
@@ -3392,18 +3421,18 @@ form[name='variant_form'] {
 }
 
 .button-group input {
-  background: #edf0f5;
+  background: var(--salat);
   outline: none;
   width: 130px;
   height: 35px;
-  border-radius: 3px;
-  color: rgb(64, 64, 64);
+  border-radius: 20px;
+  color: #FFF;
   text-transform: uppercase;
   font-family: "CorbelBold";
   font-size: 15px;
   cursor:pointer;
   &:hover{
-    background:#dfe0e2;
+   
   }
 }
 
@@ -3831,20 +3860,21 @@ div[data-entity="basket-total-block"] {
 }
 
 .form-title{
-  color: #FFF;
+  color: #000;
   font-family: "CorbelBold";
   font-size: 25px;
   margin-bottom: 15px;
 }
 
 .politic-group{
+
   & input{
     height:15px !important;
     width:15px !important;
   }
   & span{
     font-size: 12px;
-    color:#FFF;
+    color:#000;
     display: block;
     position: relative;
     left: 20px;
@@ -3854,7 +3884,7 @@ div[data-entity="basket-total-block"] {
       color:blue !important;
       text-decoration: underline;
       &:hover{
-        color:#FFF !important;
+        color:var(--salat) !important;
       }
     }
   }
@@ -3938,6 +3968,7 @@ div[data-entity="basket-total-block"] {
   & textarea{
     resize:none;
     &:focus{outline:none !important;}
+    border:1px solid var(--salat);
   }
 }
 .form-main input:focus{outline:none !important;}
@@ -4324,6 +4355,7 @@ div[data-entity="basket-total-block"] {
   color:#2e2e2e;
   font:20px "RobotoRegular";
 }
+
 .bx-breadcrumb-item-last a:hover{
   text-decoration: none;}
 .tumbler{
@@ -4727,3 +4759,4 @@ div[class*='ticon'] span{
 }
 .bx-soa-cart-total-line{display:none;}
 .bx-soa-cart-total-line-total{display:block !important;}
+

@@ -423,10 +423,21 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 
 
     <? $APPLICATION->ShowViewContent('border-top'); ?>
-    <div class="container">
+    <!--Сраный говнокод потому что гладиолус вот почему-->
+   <? 
+   $uri =  $_SERVER["REQUEST_URI"];
+   $uri = explode('/',$uri);
+
+   if(in_array('vse-trenazhery-dlya-pohudeniya',$uri) || in_array('vse-trenazhery-dlya-pressa',$uri) || in_array('vse-trenazhery-dlya-yagodic',$uri) || in_array('vse-trenazhery-dlya-spiny',$uri)){
+    ?><div class="border-top"></div><?
+   }
+   ?>
+    <!--Сраный говнокод потому что гладиолус вот почему-->
+    <? if($_SERVER["REQUEST_URI"] !== "/"){?>
+    <div class="container desk__cont">
 
         <? if ($curPage != SITE_DIR.'index.php'): ?>
-            <div id="navigation">
+            <div id="navigation" class="desk__cont-nav">
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:breadcrumb",
                     "my_crumb",
@@ -442,3 +453,14 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 
         <? endif ?>
     </div>
+   <?}?>
+<style>
+@media(min-width:768px){
+    .desk__cont{
+        height:40px;
+    }
+    .desk__cont-nav{
+        margin-top:-25px;
+    }
+}
+</style>

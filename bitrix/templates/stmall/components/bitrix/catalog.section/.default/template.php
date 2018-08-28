@@ -153,7 +153,6 @@ $containerName = 'container-'.$navParams['NavNum'];
 
 
 <?
-
 $_SESSION['arNav_RESULT'] = $arResult['NAV_RESULT'];
 $_SESSION['arName'] =  $arResult['NAME'];
 $_SESSION['DEPTH'] = $arResult['DEPTH_LEVEL'];
@@ -163,8 +162,8 @@ $_SESSION['ELEMENT_META_TITLE'] = $arResult['IPROPERTY_VALUES']['ELEMENT_META_TI
 $_SESSION['PAGEN_1'] = $_GET['PAGEN_1'];
 $_SESSION['catalog_url'] = $arResult['ORIGINAL_PARAMETERS']['CURRENT_BASE_PAGE'];
 
-
 ?>
+
 <div class="catalog-section bx-<?=$arParams['TEMPLATE_THEME']?>" data-entity="<?=$containerName?>">
         <div class="sortirovka">
                 <span>Выводить сначала:</span>

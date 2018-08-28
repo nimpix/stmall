@@ -22,12 +22,12 @@ if(!is_array($css) || !in_array("/bitrix/css/main/font-awesome.css", $css))
 $page = $APPLICATION->GetCurPage();
 $flag = strpos($page,'catalog');
 $bc = ($flag) ? 'bx-breadcrumb-prod' : '' ;
-$strReturn .= '<div class="bx-breadcrumb '.$bc.'">';
+$strReturn .= '<div class="bx-breadcrumb '.$bc.'" style="margin:28px 0 !important;">';
 
 $itemSize = count($arResult);
 $server_address = $_SERVER['REQUEST_URI'];
 $pos = strpos($server_address,'catalog');
-
+$strReturn .= '<div class="bx-breadcrumb-item return-link"><span>Вернуться на страницу : </span></div>';
 if($pos == 1) {$pr_cat = 'catalog-item';}else{ $pr_cat = '';}
 $cnt_br = 0;
 for($index = 0; $index < $itemSize; $index++)
@@ -37,6 +37,7 @@ for($index = 0; $index < $itemSize; $index++)
 	$cnt_br++;
 	$nextRef = ($index < $itemSize-2 && $arResult[$index+1]["LINK"] <> ""? ' itemref="bx_breadcrumb_'.($index+1).'"' : '');
 	$child = ($index > 0? ' itemprop="child"' : '');
+
 
 
 	if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1)
@@ -63,3 +64,4 @@ for($index = 0; $index < $itemSize; $index++)
 $strReturn .= '<div style="clear:both"></div></div>';
 
 return $strReturn;
+?>

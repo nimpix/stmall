@@ -121,14 +121,17 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
 
   ///////////////////////////////////////////////////////READY//////////////////////////////////////////////////////////////////
   $(document).on('ready', function() {
+
+
+
   //плейсхолдеры для логина
     $('#user_login').attr('placeholder','ваш телефон');
     $('#user_pas').attr('placeholder','пароль из sms');
 
     //Замена в меню
-    var newMenuCat = $('.catalog-menu ul>li:last-child a').text().replace(/Профессиональные/g,'');
-    newMenuCat = newMenuCat.replace(/силовые/g,'Силовые');
-    $('.catalog-menu ul>li:last-child a').text(newMenuCat);
+   // var newMenuCat = $('.catalog-menu ul>li:nth-child(4) a').text().replace(/Профессиональные силовые тренажеры/g,'Тренажеры для фитнес клуба');
+  //  newMenuCat = newMenuCat.replace(/силовые/g,'');
+  //  $('.catalog-menu ul>li:last-child:nth-child(4) a').text(newMenuCat);
 
     //Мобильный футер ссылки и иконки
     $('div[class*=f-item]').click(function(e){

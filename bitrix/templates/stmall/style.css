@@ -1766,9 +1766,8 @@ label[for=USER_REMEMBER_frm] {
   border: none; }
 
 .border-top {
-  border: 1px solid #e8e8e8;
   margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 12px; }
   @media (max-width: 768px) {
     .border-top {
       display: none; } }
@@ -1787,16 +1786,45 @@ label[for=USER_REMEMBER_frm] {
   font-size: 26px;
   text-transform: uppercase;
   color: var(--color-main);
-  margin: 5px 0 15px -2px; }
+  margin: 0px 0 15px -2px; }
 
 .bx-breadcrumb-item a span, .bx-breadcrumb-item span {
   font-family: "CorbelRegular" !important;
-  font-size: 17px !important;
+  font-size: 12px !important;
   color: var(--color-main); }
+
+.bx-breadcrumb-item:after {
+  content: "/";
+  display: inline-block;
+  font-size: 13px;
+  text-decoration: none !important; }
+
+.bx-breadcrumb-item-last:after {
+  content: ""; }
+
+.return-link a:after {
+  content: "";
+  font-size: 12px;
+  text-decoration: none !important; }
+
+.return-link:after {
+  content: "";
+  text-decoration: none !important; }
+
+.green-nav {
+  color: var(--salat) !important; }
 
 .bx-breadcrumb-item a span {
   text-decoration: underline;
-  margin-right: 28px; }
+  margin-right: 7px !important; }
+
+.return-link a span {
+  margin-right: 0px !important; }
+
+.return-link {
+  margin-right: 15px !important;
+  position: relative;
+  top: 0px; }
 
 .bx-breadcrumb-item a span:hover {
   color: var(--salat); }
@@ -2840,12 +2868,12 @@ input[data-entity="basket-filter-input"] {
   height: 350px;
   position: fixed;
   left: 50%;
-  border: 1px solid #55d244;
+  border: none;
   border-radius: 2px;
   top: 50%;
   margin-left: -150px;
   margin-top: -200px;
-  background: var(--salat);
+  background: url("/bitrix/templates/stmall/images/form3-bg.png");
   z-index: 20000;
   display: none; }
 
@@ -2883,14 +2911,14 @@ form[name='variant_form'] {
   display: block;
   clear: both;
   font-family: "CorbelRegular";
-  color: #ffffff;
+  color: #000000;
   font-size: 14px;
   font-weight: normal; }
 
 .form-main input {
   margin-bottom: 15px;
   background: #FFFFFF;
-  border: none;
+  border: 1px solid var(--salat);
   height: 30px;
   border-radius: 2px;
   width: 100%;
@@ -2905,18 +2933,16 @@ form[name='variant_form'] {
   margin-top: -20px; }
 
 .button-group input {
-  background: #edf0f5;
+  background: var(--salat);
   outline: none;
   width: 130px;
   height: 35px;
-  border-radius: 3px;
-  color: #404040;
+  border-radius: 20px;
+  color: #FFF;
   text-transform: uppercase;
   font-family: "CorbelBold";
   font-size: 15px;
   cursor: pointer; }
-  .button-group input:hover {
-    background: #dfe0e2; }
 
 .form-table {
   width: 200px; }
@@ -3269,7 +3295,7 @@ div[data-entity="basket-total-block"] {
   left: 0px; }
 
 .form-title {
-  color: #FFF;
+  color: #000;
   font-family: "CorbelBold";
   font-size: 25px;
   margin-bottom: 15px; }
@@ -3279,7 +3305,7 @@ div[data-entity="basket-total-block"] {
   width: 15px !important; }
 .politic-group span {
   font-size: 12px;
-  color: #FFF;
+  color: #000;
   display: block;
   position: relative;
   left: 20px;
@@ -3289,7 +3315,7 @@ div[data-entity="basket-total-block"] {
     color: blue !important;
     text-decoration: underline; }
     .politic-group span a:hover {
-      color: #FFF !important; }
+      color: var(--salat) !important; }
 
 .form-3 {
   width: 330px;
@@ -3372,7 +3398,8 @@ div[data-entity="basket-total-block"] {
 .form-2 .button-group {
   margin-top: 20px !important; }
 .form-2 textarea {
-  resize: none; }
+  resize: none;
+  border: 1px solid var(--salat); }
   .form-2 textarea:focus {
     outline: none !important; }
 
