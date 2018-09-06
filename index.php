@@ -172,85 +172,82 @@ $APPLICATION->SetTitle("");
 		</div>
 	</div>
 </div>
+<?$APPLICATION->IncludeComponent(
+	"adamant:variants", 
+	".default", 
+	array(
+		"TEMPLATE_SECTION" => array(
+			0 => "1",
+			1 => "3",
+			2 => "4",
+		),
+		"TEMPLATE_URL" => "/vse-trenazhery-dlya-pohudeniya",
+		"TEMPLATE_URL_MAIN" => "/bitrix/templates/stmall/images/tr1.png",
+		"COMPONENT_TEMPLATE" => ".default",
+		"TEMPLATE_TITLE" => "Тренажеры для похудения",
+		"TEMPLATE_BTN_NAME" => "Для тех кто хочет похудеть",
+		"TEMPLATE_ALIGN" => ""
+	),
+	false
+);?>
+ 
+ <?$APPLICATION->IncludeComponent(
+	"adamant:variants", 
+	".default", 
+	array(
+		"TEMPLATE_SECTION" => array(
+			0 => "100",
+			1 => "10",
+			2 => "208",
+		),
+		"TEMPLATE_URL" => "/vse-trenazhery-dlya-pressa",
+		"TEMPLATE_URL_MAIN" => "/bitrix/templates/stmall/images/press3.jpg",
+		"COMPONENT_TEMPLATE" => ".default",
+		"TEMPLATE_TITLE" => "Качаем пресс",
+		"TEMPLATE_BTN_NAME" => "Для тех кто хочет накачать пресс",
+		"TEMPLATE_ALIGN" => "right-trainer"
+	),
+	false
+);?>
 
-    <!----> <!--Секция тренажеров левый-->
-    <div class="container" id="title-cat">
-        <div class="row">
-            <h3>Тренажеры для похудения</h3>
-            <a class="variants-link" href="/vse-trenazhery-dlya-pohudeniya">Варианты</a>
-        </div>
-    </div>
-    <div class="trainer">
-        <div class="trainer-img">
-            
-			<div class="tr-item" style="background:url('/bitrix/templates/stmall/images/tr1.png') no-repeat center;">
-			<a href="/vse-trenazhery-dlya-pohudeniya" class="tr-item-in">
-                <a href="/vse-trenazhery-dlya-pohudeniya" class="href-one">Для тех кто хочет похудеть</a>
-   			</a>
-            </div>
-            <? print_sections($iblock_id,array(1, 4, 3)); ?>
-        </div>
-        <div style="height:400px;">
-        </div>
-    </div>
-    <!---->
-    <!----> <!--Секция тренажеров правый-->
-<div class="container" id="title-cat">
-	<div class="row">
-		<h3>Качаем пресс</h3>
-        <a class="variants-link" href="/vse-trenazhery-dlya-pressa">Варианты</a>
-	</div>
-</div>
-<div class="trainer right-trainer">
-	<div class="trainer-img">
-		<div class="tr-item" style="background:url('/bitrix/templates/stmall/images/press3.jpg') no-repeat center;">
-		<a href="/vse-trenazhery-dlya-pressa" class="tr-item-in">
- 			<a href="/vse-trenazhery-dlya-pressa" class="href-one">Для тех кто хочет накачать пресс</a>
-		</a>
-		</div>
-		 <? print_sections($iblock_id,array(100,10,208)); ?>
-	</div>
-	<div style="height:400px;">
-	</div>
-</div>
- <!----> <!--Секция тренажеров левый-->
-<div class="container" id="title-cat">
-	<div class="row">
-		<h3>Качаем ягодицы</h3>
-        <a class="variants-link" href="/vse-trenazhery-dlya-yagodic">Варианты</a>
-	</div>
-</div>
-<div class="trainer">
-	<div class="trainer-img">
-		<div class="tr-item" style="background:url('/bitrix/templates/stmall/images/yagodicy.jpg') no-repeat center;">
-		<a href="/vse-trenazhery-dlya-yagodic" class="tr-item-in">
- 			<a href="/vse-trenazhery-dlya-yagodic" class="href-one">Для тех кто хочет накачать ягодицы</a>
-		</a>
-		</div>
-		 <? print_sections($iblock_id,array(14, 11, 4)); ?>
-	</div>
-	<div style="height:400px;">
-	</div>
-</div>
- <!----> <!--Секция тренажеров правый-->
-<div class="container" id="title-cat">
-	<div class="row">
-		<h3>Качаем спину</h3>
-		<a class="variants-link" href="/vse-trenazhery-dlya-spiny">Варианты</a>
-	</div>
-</div>
-<div class="trainer right-trainer">
-	<div class="trainer-img">
-		<div class="tr-item" style="background:url('/bitrix/templates/stmall/images/spina1.jpg') no-repeat center;">
-		<a href="/vse-trenazhery-dlya-spiny" class="tr-item-in">
- 			<a href="/vse-trenazhery-dlya-spiny" class="href-one">Для тех кто хочет накачать спину</a>
-		</a>
-		</div>
-		 <? print_sections($iblock_id,array(236, 87, 11)); ?>
-	</div>
-	<div style="height:400px;">
-	</div>
-</div>
+<?$APPLICATION->IncludeComponent(
+	"adamant:variants", 
+	".default", 
+	array(
+		"TEMPLATE_SECTION" => array(
+			0 => "14",
+			1 => "11",
+			2 => "4",
+		),
+		"TEMPLATE_URL" => "/vse-trenazhery-dlya-yagodic",
+		"TEMPLATE_URL_MAIN" => "/bitrix/templates/stmall/images/yagodicy.jpg",
+		"COMPONENT_TEMPLATE" => ".default",
+		"TEMPLATE_TITLE" => "Качаем ягодицы",
+		"TEMPLATE_BTN_NAME" => "Для тех кто хочет накачать ягодицы",
+		"TEMPLATE_ALIGN" => ""
+	),
+	false
+);?>
+
+ <?$APPLICATION->IncludeComponent(
+	"adamant:variants", 
+	".default", 
+	array(
+		"TEMPLATE_SECTION" => array(
+			0 => "236",
+			1 => "87",
+			2 => "11",
+		),
+		"TEMPLATE_URL" => "/vse-trenazhery-dlya-spiny",
+		"TEMPLATE_URL_MAIN" => "/bitrix/templates/stmall/images/spina1.jpg",
+		"COMPONENT_TEMPLATE" => ".default",
+		"TEMPLATE_TITLE" => "Качаем спину",
+		"TEMPLATE_BTN_NAME" => "Для тех кто хочет накачать спину",
+		"TEMPLATE_ALIGN" => "right-trainer"
+	),
+	false
+);?>
+
  <!----> <!--Топ месяца-->
 <div class="container">
 	<div class="row">
