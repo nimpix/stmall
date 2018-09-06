@@ -1050,7 +1050,9 @@ class CBitrixCatalogSmartFilter extends CBitrixComponent
 		return $arrRes;
 	}
 
+	
 
+	
 	//search for property by its value and return its ID of match found
 	public function searchForProperty($lookupValue)
 	{
@@ -1073,63 +1075,65 @@ class CBitrixCatalogSmartFilter extends CBitrixComponent
 	}
 
 
+
 	//split url to params and get their ID's and values
 	public function convertUrlToCheck($url)
-	{
+	{	
 		$result = array();
 		$smartParts = explode("/", $url);
 
 		foreach ($smartParts as $smartPart)
 		{
-			$item = false;
-			$smart_temp = $smartPart;
-			$smartPart = preg_split("/-(ot|do|is|ili)-/", $smartPart, -1, PREG_SPLIT_DELIM_CAPTURE);
-			if(empty($smartPart)){$smartPart[0] = $smart_temp;}
-			foreach ($smartPart as $i => $smartElement)
-			{
-				if ($i == 0)
+				$item = false;
+				
+				$smart_temp = $smartPart;
+				$smartPart = preg_split("/-(ot|do|is|ili)-/", $smartPart, -1, PREG_SPLIT_DELIM_CAPTURE);
+				if(empty($smartPart)){$smartPart[0] = $smart_temp;}
+				foreach ($smartPart as $i => $smartElement)
 				{
-					if (preg_match("/^po_cene(.+)$/", $smartElement, $match))
-						$itemId = $this->searchPrice($this->arResult["ITEMS"], ''); //$match[1]
-					elseif (in_array('ot', $smartPart) || in_array('do', $smartPart)){
-						$itemId = $this->searchProperty($this->arResult["ITEMS"], $smartElement); //$this->arResult["ITEMS"],
+					if ($i == 0)
+					{
+						if (preg_match("/^po_cene(.+)$/", $smartElement, $match))
+							$itemId = $this->searchPrice($this->arResult["ITEMS"], ''); //$match[1]
+						elseif (in_array('ot', $smartPart) || in_array('do', $smartPart)){
+							$itemId = $this->searchProperty($this->arResult["ITEMS"], $smartElement); //$this->arResult["ITEMS"],
+							}
+						else
+							$itemId = $this->searchForProperty($smartElement); //$this->arResult["ITEMS"],
+
+						if ($itemId)
+							$item = $this->arResult["ITEMS"][$itemId]; // &$this->arResult["ITEMS"][$itemId]
+						else
+							break;
+					}
+
+					if ($smartElement === "ot")
+					{
+						$result[$item["VALUES"]["MIN"]["CONTROL_NAME"]] = $smartPart[$i+1];
+					}
+					elseif ($smartElement === "do")
+					{
+						$result[$item["VALUES"]["MAX"]["CONTROL_NAME"]] = $smartPart[$i+1];
+					}
+					elseif ($smartElement === "is" || $smartElement === "ili")
+					{
+						$valueId = $this->searchValue($item["VALUES"], $smartPart[$i+1]);
+						if (strlen($valueId))
+						{
+							$result[$item["VALUES"][$valueId]["CONTROL_NAME"]] = $item["VALUES"][$valueId]["HTML_VALUE"];
 						}
-					else
-						$itemId = $this->searchForProperty($smartElement); //$this->arResult["ITEMS"],
-
-					if ($itemId)
-						$item = &$this->arResult["ITEMS"][$itemId];
-					else
-						break;
-				}
-
-				if ($smartElement === "ot")
-				{
-					$result[$item["VALUES"]["MIN"]["CONTROL_NAME"]] = $smartPart[$i+1];
-				}
-				elseif ($smartElement === "do")
-				{
-					$result[$item["VALUES"]["MAX"]["CONTROL_NAME"]] = $smartPart[$i+1];
-				}
-				elseif ($smartElement === "is" || $smartElement === "ili")
-				{
-					$valueId = $this->searchValue($item["VALUES"], $smartPart[$i+1]);
-					if (strlen($valueId))
-					{
-						$result[$item["VALUES"][$valueId]["CONTROL_NAME"]] = $item["VALUES"][$valueId]["HTML_VALUE"];
+					}
+					else{
+						$valueId = $this->searchValue($item["VALUES"], $smartPart[$i]);
+						if (strlen($valueId))
+						{
+							$result[$item["VALUES"][$valueId]["CONTROL_NAME"]] = $item["VALUES"][$valueId]["HTML_VALUE"];
+						}
 					}
 				}
-				else{
-					$valueId = $this->searchValue($item["VALUES"], $smartPart[$i]);
-					if (strlen($valueId))
-					{
-						$result[$item["VALUES"][$valueId]["CONTROL_NAME"]] = $item["VALUES"][$valueId]["HTML_VALUE"];
-					}
-				}
+				unset($item);
 			}
-			unset($item);
-		}
-		return $result;
+			return $result;
 	}
 
 
@@ -1218,10 +1222,11 @@ class CBitrixCatalogSmartFilter extends CBitrixComponent
 			}
 		}
 
-		if (!$smartParts)
-			$smartParts[] = array("clear");
+		if (!$smartParts){
+		//	$smartParts[] = array("clear");
+		}
 
-		return str_replace("#SMART_FILTER_PATH#", implode("/", $this->encodeSmartParts($smartParts)), $url);
+		return str_replace("#SMART_FILTER_PATH#/", implode("/", $this->encodeSmartParts($smartParts)), $url);
 	}
 
 

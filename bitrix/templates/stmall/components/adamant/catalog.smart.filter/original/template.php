@@ -15,6 +15,7 @@ $this->setFrameMode(true);
 //массив значений выбранных нами фильтров
 $filter_settings = array();
 
+
 $templateData = array(
 	'TEMPLATE_THEME' => $this->GetFolder().'/themes/'.$arParams['TEMPLATE_THEME'].'/colors.css',
 	'TEMPLATE_CLASS' => 'bx-'.$arParams['TEMPLATE_THEME']

@@ -8,7 +8,7 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"].$this->GetFolder().'/themes/'.$arParam
 
 CJSCore::Init();
 
-$menuBlockId = "categories_menu";
+$menuBlockId = "categories_menu"; 
 ?>
 
                 <!--Меню-->
@@ -31,14 +31,15 @@ $menuBlockId = "categories_menu";
                     </li>
                     <li>
                         <span>
-                        <a href="/catalog/professionalnye-silovye-trenazhery/">Тренажеры для фитнес клуба</a>
+                        <a href="/catalog/silovye-trenazhery/">Силовые тренажеры</a>
                         </span>
                     </li>
                     <li>
                         <span>
-                        <a href="/catalog/silovye-trenazhery/">Силовые тренажеры</a>
+                        <a href="/catalog/professionalnye-silovye-trenazhery/">Тренажеры для фитнес-клубов</a>
                         </span>
                     </li>
+                    
                 </ul>
 
 

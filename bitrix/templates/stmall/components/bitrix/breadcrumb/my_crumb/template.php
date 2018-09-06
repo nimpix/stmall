@@ -33,7 +33,7 @@ $cnt_br = 0;
 for($index = 0; $index < $itemSize; $index++)
 {
 	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
-	if($pos == 1 && $cnt_br == 1) $title = "Все товары";
+	if($pos == 1 && $cnt_br == 0) $title = "Все товары";
 	$cnt_br++;
 	$nextRef = ($index < $itemSize-2 && $arResult[$index+1]["LINK"] <> ""? ' itemref="bx_breadcrumb_'.($index+1).'"' : '');
 	$child = ($index > 0? ' itemprop="child"' : '');

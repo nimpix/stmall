@@ -62,6 +62,8 @@ if ($request->isAjaxRequest() && ($request->get('action') === 'showMore' || $req
 	));
 }
 
+$APPLICATION->AddHeadString('<link href="http://'.SITE_SERVER_NAME."/catalog/".$arResult['SECTION_PAGE_URL'].'" rel="canonical" />',true);
+
 
 // }
 

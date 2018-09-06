@@ -18,7 +18,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 ***********************************************************************************/
 ?>
 <div class="form-table data-table">
-    <button id="form-close">x</button>
+    <button class="form-close">x</button>
     <div class="form-group">
 	<?
     $formcount=2;

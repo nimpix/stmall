@@ -456,7 +456,7 @@ body {
 .catalog-menu ul {
   list-style-type: none;
   display: block;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .catalog-menu ul li {
@@ -577,6 +577,7 @@ body {
   text-transform: uppercase;
   border: 2px solid #ffffff;
   outline: none !important;
+  cursor:pointer;
 }
 
 .go-back-cat:hover {
@@ -1198,6 +1199,9 @@ div[class *=tr-button] a:hover, .href-one:hover {
   width: 115px;
   height: 35px;
   cursor: pointer;
+  @media(max-width:375px){
+    font-size: 14px;
+  }
 }
 
 .bonus {
@@ -2122,6 +2126,7 @@ label[for=USER_REMEMBER_frm] {
   content:"";
   text-decoration:none !important;
 }
+.max-price-cont{display:none !important;}
 
 .green-nav{
   color:var(--salat) !important;
@@ -2681,7 +2686,7 @@ div[class*='bx-ui-slider-part'] {
   width: 225px;
 }
 
-.bx-title {
+.product h1 {
   font: 26px "RobotoBold";
   color: var(--color-main);
   text-transform: uppercase;
@@ -3379,10 +3384,10 @@ form[name='variant_form'] {
   justify-content: center;
 }
 
-#form-close {
+.form-close {
   position: absolute;
   background: none;
-  outline: none;
+  outline: none !important;
   border: none;
   top: 5px;
   right: 5px;
@@ -3849,6 +3854,7 @@ div[data-entity="basket-total-block"] {
   position: relative;
   top: 26px;
   left: 0px;
+  z-index:400;
 }
 .separator-menu{
   background: #cccccc;
@@ -4759,4 +4765,16 @@ div[class*='ticon'] span{
 }
 .bx-soa-cart-total-line{display:none;}
 .bx-soa-cart-total-line-total{display:block !important;}
-
+.svg-close{
+  display:none;
+  position:relative;
+  left:10px;
+  top:-5px;
+  z-index:100;
+}
+.error404{
+  width:400px;
+  @media(max-width:468px){
+    width:300px
+  }
+}

@@ -162,6 +162,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 <!--    base-->
     <div class="content">
         <!--  Mobile menu-->
+        <!--noindex-->
         <?$page = $APPLICATION->GetCurPage();
         $flag = strpos($page,'catalog');
         ?>
@@ -175,6 +176,11 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                         <span class="line-bar"></span>
                         <span class="line-bar"></span>
                     </div>
+                    <div class="svg-close">
+                         <object id="svg-close"  type="image/svg+xml" data="/upload/times-solid.svg"> </object>
+                    </div>
+                   
+                    <!-- <i id="svg-close" class="fas fa-times" style="display:none;position:relative;left:10px;top:10px;z-index:100;"></i> -->
                 </div>
             </div>
 
@@ -211,6 +217,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                 </div>
             </div>
         </div>
+         <!--/noindex-->
         <!--Поиск-->
         <div class="search col-auto mobpanelsearch">
             <div class="input-group">
@@ -322,7 +329,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
                     ),
                     false
                 ); ?>
-            </div>
+            
             <div class="cart col-sm-auto ml-auto">
                 <!--                <div class="cart-icons">-->
                 <!--                    <span></span>-->
@@ -353,11 +360,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 	),
 	false
 ); ?>
-                <!--                </div>-->
-                <!--                -->
-                <!--                <div class="cart-text">-->
-                <!--                    <div><span>Корзина</span><span>18555 р.</span></div>-->
-                <!--                </div>-->
+             
             </div>
             <div class="button-call col-sm-auto ml-auto">
                 <button>Заказать звонок</button>

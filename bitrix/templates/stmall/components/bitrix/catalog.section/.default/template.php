@@ -41,6 +41,11 @@ $showTopPager = false;
 $showBottomPager = false;
 $showLazyLoad = false;
 
+?>
+
+
+<?
+
 if ($arParams['PAGE_ELEMENT_COUNT'] > 0 && $navParams['NavPageCount'] > 1)
 {
 	$showTopPager = $arParams['DISPLAY_TOP_PAGER'];

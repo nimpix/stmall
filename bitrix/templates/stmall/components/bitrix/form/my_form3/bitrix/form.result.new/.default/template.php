@@ -22,7 +22,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
         <div>ПОДОБРАТЬ ВАРИАНТЫ</div>
         <div>тренажеров под ваши потребности</div>
     </div>
-    <button id="form-close">x</button>
+    <button class="form-close">x</button>
     <div class="form-group">
 	<?
     $formcount=2;

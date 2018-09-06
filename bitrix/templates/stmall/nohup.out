@@ -1353,3 +1353,44 @@ SignalException: SIGTERM
 >>> Change detected to: sass/_template_styles.scss
       write style.css
       write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4774: Invalid CSS after ".": expected class name, was "404-error")
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map

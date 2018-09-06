@@ -52,6 +52,19 @@
 </footer>
 </div>
 </div>
+
+<? 
+global $USER;
+$user_id = 0;
+$user_id = $USER->GetID();
+
+if ($user_id != 1){
+?>
+<link rel="stylesheet" href="https://cdn.saas-support.com/widget/cbk.css">
+<script type="text/javascript" src="https://cdn.saas-support.com/widget/cbk.js?wcb_code=bd2a4913caa0e242879870afdb586fdd" charset="UTF-8" async></script>
+<? }
+?>
+
 </body>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript"> (function (d, w, c) {

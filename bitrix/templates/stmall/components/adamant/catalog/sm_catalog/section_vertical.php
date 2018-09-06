@@ -193,6 +193,27 @@ if ($isFilter || $isSidebar): ?>
                     array("HIDE_ICONS" => "Y")
                 );
             }
+            
+?>
+
+	<? 	
+
+	//show properties only in selected sections (if they are)	
+	if (!empty($arParams['PROP_SECT_LIST'])){
+		$rsSections = CIBlockSection::GetByID($arCurSection['ID']);
+		$arSection = $rsSections->Fetch();
+		$idParent = $arSection['IBLOCK_SECTION_ID'];
+	
+		if ((in_array($arCurSection['ID'], $arParams['PROP_SECT_LIST']) == false) && (in_array($idParent, $arParams['PROP_SECT_LIST']) == false)){
+			$arParams["LIST_PROPERTY_CODE"] = array(0 => '');
+			
+		}
+	}
+
+	?>
+
+
+<?            
 
             $intSectionID = $APPLICATION->IncludeComponent(
                 "bitrix:catalog.section",

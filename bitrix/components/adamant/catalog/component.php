@@ -16,135 +16,10 @@ else
 $propertyList = array();
 
 
-function makePropListMine($L_ID){
-  $arrRes = array();
-  $UserField = CIBlockPropertyEnum::GetList(array(), array("PROPERTY_ID" => $L_ID));
-  while ($UserFieldAr = $UserField->GetNext())
-  {
-    $arrRes[] = $UserFieldAr['XML_ID'];
-  }
-  return $arrRes;
-}
-
-function makeHLpropListMine($HLb_table){
-  $arrRes = array();
-
-  if (CModule::IncludeModule('highloadblock')){
-
-    $hlblock = \Bitrix\Highloadblock\HighloadBlockTable::getList(array("filter" => array('TABLE_NAME' => $HLb_table)))->fetch();
-    $entity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hlblock);
-    $entityClass = $entity->getDataClass();
-
-    $resx = $entityClass::getList(array('select' => array('ID','UF_NAME', 'UF_XML_ID'), 'filter' => array()));
-
-    while ($erow = $resx->fetch())
-      $arrRes[] = $erow['UF_XML_ID'];
-  }
-  return $arrRes;
-}
-
-function getIBpropListMine($IBLOCK_ID){
-  $arrRes = array();
-  $aTMP = array();
-  $properties = CIBlockProperty::GetList(Array("sort"=>"asc", "name"=>"asc"), Array("ACTIVE"=>"Y", "IBLOCK_ID"=>$IBLOCK_ID));
-  while ($prop_fields = $properties->GetNext())
-  {
-    $aTMP['ID'] = $prop_fields['ID'];
-    $aTMP['CODE'] = $prop_fields['CODE'];
-    $aTMP['PROPERTY_TYPE'] = $prop_fields['PROPERTY_TYPE']; //L - list, F - photo, S -HL block, N - natural value
-    $aTMP['TABLE_NAME'] = $prop_fields['USER_TYPE_SETTINGS']['TABLE_NAME'];
-    $arrRes[] = $aTMP;
-  }
-  return $arrRes;
-}
-
-//get all properties values of IBLOCK into array
-function makePropValArrayMine($IBLOCK_ID){
-  $arrRes = array();
-  $prop_list = array();
-  $prop_val = array();
-
-  //get all props of IBLOCK
-  $prop_list = getIBpropListMine($IBLOCK_ID);
-
-
-  //making result array of both list and HL properties
-  foreach ($prop_list as $id => $prop){
-
-    if ($prop['PROPERTY_TYPE'] == 'L'){
-      $arrRes[$prop['ID']] = makePropListMine($prop['ID']);
-    }
-
-    if (($prop['PROPERTY_TYPE'] == 'S') && ($prop['TABLE_NAME'] != '')) {
-      $arrRes[$prop['ID']] = makeHLpropListMine($prop['TABLE_NAME']);
-    }
-  }
-      $propertyList = $arrRes;
-  return $arrRes;
-}
-
-function searchForPropertyMine($lookupValue)
-{
-  $IBLOCK_ID = 1; //our info block
-
-  //if we have empty property values array - fill it from our IBLOCK
-  if (empty($propertyList))
-  {
-          $propertyList = makePropValArrayMine($IBLOCK_ID);
-  }
-
-  //search for property ID by one of his values
-  foreach($propertyList as $pID => $pValue)
-  {
-    if (in_array($lookupValue, $pValue))
-      return $pID;
-  }
-
-  return false;
-}
 
 //split url to params and get their ID's and values
-function convertUrlToCheckMine($url)
-{
-  $result = array();
-  $smartParts = explode("/", $url);
 
-  foreach ($smartParts as $smartPart)
-  {
-
-    $smart_temp = $smartPart;
-    if(empty($smartPart)) continue;
-		if($smartPart == 'clear') return true;
-    $smartPart = preg_split("/-(ot|do|is|ili)-/", $smartPart, -1, PREG_SPLIT_DELIM_CAPTURE);
-    if(count($smartPart)>1) 	return true;
-
-    if(empty($smartPart)){$smartPart[0] = $smart_temp;}
-    foreach ($smartPart as $i => $smartElement)
-    {
-      if ($i == 0)
-      {
-        if (preg_match("/^po_cene(.+)$/", $smartElement, $match))
-        return true; //$match[1]
-        elseif (in_array('ot', $smartPart) || in_array('do', $smartPart)){
-          return true;  //$this->arResult["ITEMS"],
-          }
-
-				else
-          $itemId = searchForPropertyMine($smartElement); //$this->arResult["ITEMS"],
-
-        if ($itemId)
-          return true;
-        else
-          break;
-      }
-    }
-
-  }
-return false;
-}
 /////////////////////////////////////////////////////
-
-
 
 //default gifts
 if(empty($arParams['USE_GIFTS_SECTION']))
@@ -202,16 +77,154 @@ if($arParams["SEF_MODE"] == "Y")
 	}
 	$arUrlTemplates = CComponentEngine::makeComponentUrlTemplates($arDefaultUrlTemplates404, $arParams["SEF_URL_TEMPLATES"]);
 	$arVariableAliases = CComponentEngine::makeComponentVariableAliases($arDefaultVariableAliases404, $arParams["VARIABLE_ALIASES"]);
-
+	
 	$componentPage = $engine->guessComponentPath(
 		$arParams["SEF_FOLDER"],
 		$arUrlTemplates,
 		$arVariables
 	);
+///////////////////////
+
+	//get all iblock properties
+	//return array of properties, containing ID, CODE and PROPERTY_TYPE
+function getIBpropList($IBLOCK_ID = 1){
+		$arrRes = array();
+		$aTMP = array();
+		$properties = CIBlockProperty::GetList(Array("sort"=>"asc", "name"=>"asc"), Array("ACTIVE"=>"Y", "IBLOCK_ID"=> 1));
+		while ($prop_fields = $properties->GetNext())
+		{
+			$aTMP['ID'] = $prop_fields['ID'];
+			$aTMP['CODE'] = $prop_fields['CODE'];
+			$aTMP['PROPERTY_TYPE'] = $prop_fields['PROPERTY_TYPE']; //L - list, F - photo, S -HL block, N - natural value
+			$aTMP['TABLE_NAME'] = $prop_fields['USER_TYPE_SETTINGS']['TABLE_NAME'];
+			$arrRes[] = $aTMP;
+		}
+		return $arrRes;
+	}
+
+
+	//get all properties values of property type L - list
+	//return array, containing all property's XML_ID values
+	function makePropList($L_ID){
+		$arrRes = array();
+		$UserField = CIBlockPropertyEnum::GetList(array(), array("PROPERTY_ID" => $L_ID));
+		while ($UserFieldAr = $UserField->GetNext())
+		{
+		  $arrRes[] = $UserFieldAr['XML_ID'];
+		}
+		return $arrRes;
+	}
+
+	//get all properties values of property type S - HL Iblock
+	//return array, containing all property's XML_ID values
+	function makemineHLpropList($HLb_table){
+		$arrRes = array();
+
+		if (CModule::IncludeModule('highloadblock')){
+
+			$hlblock = \Bitrix\Highloadblock\HighloadBlockTable::getList(array("filter" => array('TABLE_NAME' => $HLb_table)))->fetch();
+			$entity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hlblock);
+			$entityClass = $entity->getDataClass();
+
+			$resx = $entityClass::getList(array('select' => array('ID','UF_NAME', 'UF_XML_ID'), 'filter' => array()));
+
+			while ($erow = $resx->fetch())
+			  $arrRes[] = $erow['UF_XML_ID'];
+		}
+		return $arrRes;
+	}
+
+
+	//get all properties values of IBLOCK into array
+	//return array, of props CODEs, each of it contain all property's XML_ID values
+	function makePropValArray($IBLOCK_ID = 1){
+		$arrRes = array();
+		$prop_list = array();
+		$prop_val = array();
+
+		//get all props of IBLOCK
+		$prop_list = getIBpropList($IBLOCK_ID);
+
+
+		//making result array of both list and HL properties
+		foreach ($prop_list as $id => $prop){
+
+			if ($prop['PROPERTY_TYPE'] == 'L'){
+				$arrRes[$prop['ID']] = makePropList($prop['ID']);
+			}
+
+			if (($prop['PROPERTY_TYPE'] == 'S') && ($prop['TABLE_NAME'] != '')) {
+				$arrRes[$prop['ID']] = makemineHLpropList($prop['TABLE_NAME']);
+			}
+		}
+        $propertyList = $arrRes;
+		return $arrRes;
+	}
+
+function searchForProperty($lookupValue)
+{
+	//if we have empty property values array - fill it from our IBLOCK
+
+	$propertyList = makePropValArray(1);
+	
+	$result = false;
+	//search for property ID by one of his values
+	foreach($propertyList as $pID => $pValue)
+	{
+		if (in_array($lookupValue, $pValue)){
+			$result = true;
+		}
+	}
+
+	return $result;
+
+}
+
+/////////////////////////////////////////////////////
+function getFilterPath($url)
+{
+	$parts = explode('/',$url);
+	$newparts = array_slice($parts,3);
+	array_pop($newparts);
+
+
+	foreach ($newparts as $smartPart)
+	{		
+	  	$smartPart = preg_split("/-(ot|do|is|ili)-/", $smartPart, -1, PREG_SPLIT_DELIM_CAPTURE);
+
+			foreach ($smartPart as $smartElement)
+			{
+			
+				if (preg_match("/^po_cene(.+)$/", $smartElement, $match))
+					$result = true;
+				elseif (in_array('ot', $smartPart) || in_array('do', $smartPart) || in_array('ili', $smartPart) ){
+					$result = true;
+					}
+				elseif(searchForProperty($smartElement)){
+					$result = true;
+				}else{
+					$result = false;
+					break;
+				}
+
+			}
+		
+		}
+		
+		return $result;
+}
+
 
 	if ($componentPage === "smart_filter")
 		$componentPage = "section";
 
+	$filt_array = getFilterPath($_SERVER['REQUEST_URI']);
+
+
+	if($filt_array){
+		$componentPage = "section";
+	}
+/////////////////////////////////////////////////////////
 	if(!$componentPage && isset($_REQUEST["q"]))
 		$componentPage = "search";
 
@@ -322,7 +335,7 @@ else
 }
 
 
-//if(convertUrlToCheckMine($_SERVER["REQUEST_URI"])) $componentPage = "section";
+//if(!convertUrlToCheckMine($_SERVER["REQUEST_URI"])) $componentPage = "section";
 
 
 

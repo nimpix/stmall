@@ -17,6 +17,16 @@ if(!Loader::includeModule('iblock'))
 	return;
 }
 
+// $parts = explode('/',$url);
+// $parts = array_slice($parts,3);
+// array_pop($parts);
+// $rsp = "";
+// foreach ($parts as $part) {
+// 	$rsp .= $part."/";
+// }
+// vardump($this->convertUrlToCheck('/po_cene-base_price-do-10992220/poluprofessionalnye/'));
+
+
 $FILTER_NAME = (string)$arParams["FILTER_NAME"];
 
 if($this->StartResultCache(false, 'v7'.($arParams["CACHE_GROUPS"]? $USER->GetGroups(): false)))
@@ -294,18 +304,29 @@ else
 // }
 ///////////////////////////////////
 /*Handle checked for checkboxes and html control value for numbers*/
+$parts = explode('/',$_SERVER['REQUEST_URI']);
+	$newparts = array_slice($parts,3);
+	array_pop($newparts);
+
+	$my_uri = implode('/',$newparts);
+	$my_uri .= "/";
+	
 if(isset($_REQUEST["ajax"]) && $_REQUEST["ajax"] === "y")
 	$_CHECK = &$_REQUEST;
 elseif(isset($_REQUEST["del_filter"]))
 	$_CHECK = array();
 elseif(isset($_GET["set_filter"]))
 	$_CHECK = &$_GET;
-elseif($arParams["SMART_FILTER_PATH"])
-	$_CHECK = $this->convertUrlToCheck($arParams["~SMART_FILTER_PATH"]);
+elseif($my_uri){
+
+	$_CHECK = $this->convertUrlToCheck($my_uri);}
 elseif($arParams["SAVE_IN_SESSION"] && isset($_SESSION[$FILTER_NAME][$this->SECTION_ID]))
 	$_CHECK = $_SESSION[$FILTER_NAME][$this->SECTION_ID];
 else
 	$_CHECK = array();
+
+
+		
 
 /*Set state of the html controls depending on filter values*/
 $allCHECKED = array();

@@ -74,13 +74,15 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
     let count = parseInt($('#cart-count').val());
     let old_price = $('#cart-price').val();
     let count_price = $('.product-item-detail-price-current').html().split('</span>');
-    count_price = count_price[1];
-    count_price = count_price.replace('руб.', '').replace(/\s/g, '');
+  
+    count_price = count_price[2];
+    count_price = count_price.replace('р.', '').replace(/\s/g, '');
     old_price = old_price.replace().replace(/\s/g, '');
     old_price = parseInt(old_price);
-    count_price = parseInt(count_price);
+    count_price = parseInt(count_price); 
     count++;
     count_price += old_price;
+    
     if (!$(this).hasClass('pushed-btn')) {
       $('#cart-count').val(count);
       $('.cart-count').html(count);
@@ -244,17 +246,17 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
       $('.form-1,.form-2,.form-3').fadeOut();
     });
 
-    $('#form-close').click(function(e) {
+    $('.form-close').click(function(e) {
       e.preventDefault();
       $('.popback').fadeOut();
       $('.form-1,.form-2,.form-3').fadeOut();
     });
-    $('.form-2 #form-close').click(function(e) {
+    $('.form-2 .form-close').click(function(e) {
       e.preventDefault();
       $('.popback').fadeOut();
       $('.form-2').fadeOut();
     });
-    $('.form-3 #form-close').click(function(e) {
+    $('.form-3 .form-close').click(function(e) {
       e.preventDefault();
       $('.popback').fadeOut();
       $('.form-3').fadeOut();
@@ -317,13 +319,20 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
     //Mobile menu
     if (document.body.clientWidth <= 788) {
 
-
-      $('.catalog-dropdown').click(function() {
+      $('#mobile-drop').click(function() {
         if ($('.mob-menu').hasClass('collapsed-menu')) {
-          $('.mob-menu').stop(true, true).removeClass('collapsed-menu').slideUp();
+           $('.mob-menu').stop(true, true).removeClass('collapsed-menu').slideUp();
+           $('.menu-bar').css({'opacity':'1'});
+           $('.svg-close').hide();      
         } else {
           $('.mob-menu').stop(true, true).addClass('collapsed-menu').slideDown();
+          $('.menu-bar').css({'opacity':'0'});
+          $('.svg-close').show();
         }
+      });
+
+      $('.svg-close').click(function(){console.log(111);
+        $('.mob-menu').stop(true, true).removeClass('collapsed-menu').slideUp(); 
       });
     }
 

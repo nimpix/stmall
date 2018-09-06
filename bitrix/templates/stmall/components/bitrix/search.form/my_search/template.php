@@ -13,21 +13,28 @@
 $this->setFrameMode(true);?>
 
 <div class="search col-sm-auto">
-    <div class="input-group">
-        <form action="<?=$arResult["FORM_ACTION"]?>">
-            <?if($arParams["USE_SUGGEST"] === "Y"):?><?$APPLICATION->IncludeComponent(
-                "bitrix:search.suggest.input",
-                "",
-                array(
-                    "NAME" => "q",
-                    "VALUE" => "",
-                    "INPUT_SIZE" => 15,
-                    "DROPDOWN_SIZE" => 10,
-                ),
-                $component, array("HIDE_ICONS" => "Y")
-            );?><?else:?><input class="form-control" type="text" name="q" value="" size="15" maxlength="50" placeholder="Я ищу..." /><?endif;?>
-            <input name="s" type="submit" value="<?=GetMessage("BSF_T_SEARCH_BUTTON");?>" />
-        </form>
-    </div>
-</div
+    <form action="/search/index.php">
+        <div class="input-group">
+
+            <?if($arParams["USE_SUGGEST"] === "Y"):?>
+            <?$APPLICATION->IncludeComponent(
+				"bitrix:search.suggest.input",
+				"",
+				array(
+					"NAME" => "q",
+					"VALUE" => "",
+					"INPUT_SIZE" => 15,
+					"DROPDOWN_SIZE" => 10, 
+				),
+				$component, array("HIDE_ICONS" => "Y")
+			);?>
+            <?else:?><input class="form-control" type="text" name="q" value="" size="15" maxlength="50" placeholder="Я ищу..." />
+            <?endif;?>
+
+
+            <input name="s" type="submit" value="Поиск" />
+
+        </div>
+    </form>
+</div>
 

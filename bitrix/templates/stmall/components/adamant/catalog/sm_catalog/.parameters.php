@@ -1247,6 +1247,21 @@ $arTemplateParameters['DETAIL_SHOW_VIEWED'] = array(
 	'DEFAULT' => 'Y'
 );
 
+
+ $rsSections = CIBlockSection::GetList(array(),array('IBLOCK_ID' => $arCurrentValues['IBLOCK_ID'], 'DEPTH_LEVEL' => '1', 'ACTIVE' => 'Y'));
+   while ($arSect = $rsSections->Fetch())
+   {
+      $arSectList[$arSect['ID']] = $arSect['NAME'];
+   }
+   
+   $arTemplateParameters['PROP_SECT_LIST'] = array(
+	  "PARENT" => 'LIST_SETTINGS',
+      'NAME' => GetMessage('CP_BC_TPL_SHOW_PROPERTIES_IN_SECTIONS'),
+      'TYPE' => 'LIST',
+      'MULTIPLE' => 'Y',
+      'VALUES' => $arSectList,
+   );
+
 // hack to hide component parameters by templates
 $arTemplateParameters['HIDE_USE_ALSO_BUY'] = array();
 ?>
