@@ -170,16 +170,17 @@ $_SESSION['catalog_url'] = $arResult['ORIGINAL_PARAMETERS']['CURRENT_BASE_PAGE']
 ?>
 
 <div class="catalog-section bx-<?=$arParams['TEMPLATE_THEME']?>" data-entity="<?=$containerName?>">
-        <div class="sortirovka">
+        <!-- <div class="sortirovka">
                 <span>Выводить сначала:</span>
-                <a <?if (($_GET["sort"] == "price") && ($_GET["method"] == "asc") || (!isset($_GET["sort"]))):?> class="sorted" <?endif;?> href="<?=$arResult["SECTION_PAGE_URL"]?>?sort=price&method=asc">
+                <a <?//if (($_GET["sort"] == "price") && ($_GET["method"] == "asc") || (!isset($_GET["sort"]))):?> class="sorted" <?//endif;?> href="<?//=$arResult["SECTION_PAGE_URL"]?>?sort=price&method=asc">
                     самые дешевые
                 </a>
-                <a <?if (($_GET["sort"] == "price") && ($_GET["method"] == "desc")):?> class="sorted" <?endif;?> href="<?=$arResult["SECTION_PAGE_URL"]?>?sort=price&method=desc">
+                <a <?//if (($_GET["sort"] == "price") && ($_GET["method"] == "desc")):?> class="sorted" <?//endif;?> href="<?//=$arResult["SECTION_PAGE_URL"]?>?sort=price&method=desc">
                     самые дорогие
                 </a>
 
-            </div>
+		</div> -->
+		
     <div data-pagination-num="<?=$navParams['NavNum']?>" class="top-pagination">
         <!-- pagination-container -->
         <?=$arResult['NAV_STRING']?>
@@ -311,15 +312,22 @@ if ($showBottomPager)
 
 
 
-<?
+<? 
 if($arResult['ORIGINAL_PARAMETERS']['CURRENT_BASE_PAGE'] != '/catalog/' && strpos($arResult['ORIGINAL_PARAMETERS']['CURRENT_BASE_PAGE'], '/catalog/?PAGEN_1') === false){
 
     if(!empty($_GET['PAGEN_1'])){
+		if(empty($arResult['DESCRIPTION'])){
         ?>
         <div class="meta-text-cat">
             <p>Сложно выбрать <a class="bottom-text-meta-link" href="<?print "http://st-mall.ru".$arResult['SECTION_PAGE_URL'];?>"><span class="lowecase-title"></span></a> самостоятельно? Наш менеджер найдет оборудование за вас! Оставляйте заявку, и мы бесплатно отберем самые лучшие варианты!</p>
         </div>
-    <? }else{?>
+
+	<? }else{
+		?><div class="meta-text-cat"></div><?
+	}
+	}else{
+		if(empty($arResult['DESCRIPTION'])){	
+		?>
 
     <div class="meta-text-cat">
         <h2>Покупайте <span class="lowecase-title"></span> на 10% дешевле, чем в магазинах! </h2>
@@ -329,7 +337,10 @@ if($arResult['ORIGINAL_PARAMETERS']['CURRENT_BASE_PAGE'] != '/catalog/' && strpo
         <span>Это удобно ➤</span>
         <p>На сайте st-mall.ru все <span class="lowecase-title"><?//$APPLICATION->ShowTitle(false);?></span> с фото, подробным описанием и характеристиками. Любые вопросы можно задать онлайн — специалист отвечает через 3 минуты. При этом оформление покупки у вас займет не больше 5 минут!<p>
     </div>
-    <? }
+    <? }else{
+		?><div class="meta-text-cat"><?=$arResult['DESCRIPTION']?></div><?
+	}
+}
 
 }
 

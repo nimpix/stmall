@@ -214,6 +214,10 @@ if ($isFilter || $isSidebar): ?>
 
 
 <?            
+			
+			// $arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"];
+			// $arParams["ELEMENT_SORT_ORDER"] = $_GET["method"];
+			 
 
             $intSectionID = $APPLICATION->IncludeComponent(
                 "bitrix:catalog.section",

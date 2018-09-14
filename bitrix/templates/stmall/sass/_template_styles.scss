@@ -3349,7 +3349,7 @@ input[data-entity="basket-filter-input"] {
 
 .form-1, .form-2 {
   width: 300px;
-  height: 350px;
+  height: auto;
   position: fixed;
   left: 50%;
   border: none;
@@ -3357,9 +3357,10 @@ input[data-entity="basket-filter-input"] {
   top: 50%;
   margin-left: -150px;
   margin-top: -200px;
-  background: url('/bitrix/templates/stmall/images/form3-bg.png');
+  background: url('/bitrix/templates/stmall/images/form3-bg.png') no-repeat;
   z-index: 20000;
   display: none;
+  padding-bottom:20px;
 }
 
 .form-2 {
@@ -3580,10 +3581,15 @@ input[name=register_submit_button]:hover {
   padding-left: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
+  font-size:14px;
 }
 
 .meta-text-cat h2 {
   font-size: 28px;
+  font-family: "CorbelBold";
+}
+.meta-text-cat h3{
+  font-size: 20px;
   font-family: "CorbelBold";
 }
 
@@ -3976,6 +3982,10 @@ div[data-entity="basket-total-block"] {
     &:focus{outline:none !important;}
     border:1px solid var(--salat);
   }
+}
+.form-main p{margin:0 !important;text-align: center;display:block;}
+.form-main .errortext{
+  font-size:10px !important;
 }
 .form-main input:focus{outline:none !important;}
 .payment-text{
@@ -4655,8 +4665,11 @@ div[class*='ticon'] span{
   color:#000;
   position:relative;
   top:-5px;
+  display:block;
+  width:150px;
   @media (max-width:992px){
     top:0px;
+    width:auto;
   }
 }
 .cart-container .basket-item-block-actions{
@@ -4777,4 +4790,25 @@ div[class*='ticon'] span{
   @media(max-width:468px){
     width:300px
   }
+}
+.form__message{
+  display:none;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.form__message-error{
+  color:red;
+  font-family: "RobotoBold";
+  @extend .form__message
+}
+.form__message-success{
+  color:#17b239;
+  font-family: "RobotoBold";
+  @extend .form__message
+}
+
+.form__message-success span{
+  font-size:12px;
+  color:#000;
 }

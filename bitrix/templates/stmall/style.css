@@ -2872,7 +2872,7 @@ input[data-entity="basket-filter-input"] {
 
 .form-1, .form-2 {
   width: 300px;
-  height: 350px;
+  height: auto;
   position: fixed;
   left: 50%;
   border: none;
@@ -2880,9 +2880,10 @@ input[data-entity="basket-filter-input"] {
   top: 50%;
   margin-left: -150px;
   margin-top: -200px;
-  background: url("/bitrix/templates/stmall/images/form3-bg.png");
+  background: url("/bitrix/templates/stmall/images/form3-bg.png") no-repeat;
   z-index: 20000;
-  display: none; }
+  display: none;
+  padding-bottom: 20px; }
 
 .form-2 {
   height: 360px; }
@@ -3063,10 +3064,15 @@ input[name=register_submit_button]:hover {
 .meta-text-cat {
   padding-left: 20px;
   margin-top: 40px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  font-size: 14px; }
 
 .meta-text-cat h2 {
   font-size: 28px;
+  font-family: "CorbelBold"; }
+
+.meta-text-cat h3 {
+  font-size: 20px;
   font-family: "CorbelBold"; }
 
 .meta-text-cat h2 span {
@@ -3410,6 +3416,14 @@ div[data-entity="basket-total-block"] {
   border: 1px solid var(--salat); }
   .form-2 textarea:focus {
     outline: none !important; }
+
+.form-main p {
+  margin: 0 !important;
+  text-align: center;
+  display: block; }
+
+.form-main .errortext {
+  font-size: 10px !important; }
 
 .form-main input:focus {
   outline: none !important; }
@@ -4123,10 +4137,13 @@ div[class*='ticon'] span {
   font-size: 24px;
   color: #000;
   position: relative;
-  top: -5px; }
+  top: -5px;
+  display: block;
+  width: 150px; }
   @media (max-width: 992px) {
     .cart-container .basket-item-price-current-text {
-      top: 0px; } }
+      top: 0px;
+      width: auto; } }
 
 .cart-container .basket-item-block-actions {
   opacity: 1 !important; }
@@ -4249,6 +4266,24 @@ div[class*='ticon'] span {
   @media (max-width: 468px) {
     .error404 {
       width: 300px; } }
+
+.form__message, .form__message-error, .form__message-success {
+  display: none;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px; }
+
+.form__message-error {
+  color: red;
+  font-family: "RobotoBold"; }
+
+.form__message-success {
+  color: #17b239;
+  font-family: "RobotoBold"; }
+
+.form__message-success span {
+  font-size: 12px;
+  color: #000; }
 
 .pohudeine .banner_title {
   background: url("/upload/dlya-pohudeniya.jpg") center no-repeat;

@@ -123,9 +123,78 @@ function to_delay(p_id, pp_id, p, name, dpu, size, color) {
 
   ///////////////////////////////////////////////////////READY//////////////////////////////////////////////////////////////////
   $(document).on('ready', function() {
+    
+ ////*******************Форма CALLBACK**************************************** */
+ $('.form-main form').attr('action','');
+ $(document).on('submit','.form-1 form',function(e){ 
+   var form = this;
+   e.preventDefault();
+   $.ajax({
+   	url:'/forms/callform_action.php',//, '/forms/callform_action.php'
+   	type: 'post',
+   	dataType: 'json',
+   	data:$(this).serialize(),
+   	success: function(data){
+   		if(data['error']){     
+         $(form).find('.form__message-success').hide();
+         $(form).find('.form-title').hide();
+         $(form).find('.form__message-error').fadeIn();
+         
+      }else{
+        $(form).find('.form-title').hide();
+        $(form).find('.form-group').hide();
+        $(form).find('.form__message-error').hide();
+        $(form).find('.form__message-success').fadeIn();
+        $('.form-1').css('border','1px solid #eee8e8');
+        $('.form-1').delay(3000).fadeOut();
+        $('.popback').fadeOut();
+        return false;
+      }
+   	},
+   	error:function(data){
+     
+   	}	
+   });
+ });
+ //************************************************************** */
+
+  ////*******************Форма CALLBACK**************************************** */
+  $('.form-main form').attr('action','');
+  $(document).on('submit','.form-2 form',function(e){ 
+    var form = this; 
+    e.preventDefault();
+    $.ajax({
+      url:'/forms/product_form.php',//, '/forms/callform_action.php'
+      type: 'post',
+      dataType: 'json',
+      data:$(this).serialize(),
+      success: function(data){  
+        if(data['error']){     
+          $(form).find('.form__message-success').hide();
+          $(form).find('.form-title').hide();
+          $(form).find('.form__message-error').fadeIn();
+          
+       }else{
+         $(form).find('.form-title').hide();
+         $(form).find('.form-group').hide();
+         $(form).find('.form__message-error').hide();
+         $(form).find('.form__message-success').fadeIn();
+         $('.form-2').css('border','1px solid #eee8e8');
+         $('.form-2').delay(3000).fadeOut();
+         $('.popback').fadeOut();
+         return false;
+       }
+      },
+      error:function(data){
+   
+      }	
+    });
+  });
+  //************************************************************** */
 
 
-
+  $('input[name="form_text_1"]').mask("+7 999 999 99 99");
+  $('input[name="form_text_7"]').mask("+7 999 999 99 99");
   //плейсхолдеры для логина
     $('#user_login').attr('placeholder','ваш телефон');
     $('#user_pas').attr('placeholder','пароль из sms');

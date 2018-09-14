@@ -16,6 +16,8 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery-1.11.1.min.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/script.js");
     $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/timer.js");
+    $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/jquery.maskedinput.min.js");
+
     //$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/vue.js");
    // $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/vue_script.js");
     ?>
@@ -47,6 +49,7 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=207484840066549&ev=PageView&noscript=1"/></noscript>
     <meta name="yandex-verification" content="d25a619a4b76674e" />
+    <?$APPLICATION->SetPageProperty("robots", "index, follow");?>
 </head>
 
 
@@ -57,52 +60,52 @@ $theme = COption::GetOptionString("main", "wizard_eshop_bootstrap_theme_id", "bl
 <div class="form-1">
     <div class="form-main">
         <? $APPLICATION->IncludeComponent(
-            "bitrix:form",
-            "my_form",
-            array(
-                "AJAX_MODE" => "N",
-                "AJAX_OPTION_ADDITIONAL" => "",
-                "AJAX_OPTION_HISTORY" => "N",
-                "AJAX_OPTION_JUMP" => "N",
-                "AJAX_OPTION_STYLE" => "Y",
-                "CACHE_TIME" => "3600",
-                "CACHE_TYPE" => "A",
-                "CHAIN_ITEM_LINK" => "",
-                "CHAIN_ITEM_TEXT" => "",
-                "EDIT_ADDITIONAL" => "N",
-                "EDIT_STATUS" => "Y",
-                "IGNORE_CUSTOM_TEMPLATE" => "Y",
-                "NOT_SHOW_FILTER" => array(
-                    0 => "",
-                    1 => "",
-                ),
-                "NOT_SHOW_TABLE" => array(
-                    0 => "",
-                    1 => "",
-                ),
-                "RESULT_ID" => $_REQUEST[RESULT_ID],
-                "SEF_FOLDER" => "",
-                "SEF_MODE" => "Y",
-                "SHOW_ADDITIONAL" => "N",
-                "SHOW_ANSWER_VALUE" => "N",
-                "SHOW_EDIT_PAGE" => "N",
-                "SHOW_LIST_PAGE" => "N",
-                "SHOW_STATUS" => "Y",
-                "SHOW_VIEW_PAGE" => "N",
-                "START_PAGE" => "new",
-                "SUCCESS_URL" => "/thank-you",
-                "USE_EXTENDED_ERRORS" => "N",
-                "WEB_FORM_ID" => "1",
-                "COMPONENT_TEMPLATE" => "my_form",
-                "SEF_URL_TEMPLATES" => array(
-                    "new" => "#WEB_FORM_ID#/",
-                    "list" => "#WEB_FORM_ID#/list/",
-                    "edit" => "#WEB_FORM_ID#/edit/#RESULT_ID#/",
-                    "view" => "#WEB_FORM_ID#/view/#RESULT_ID#/",
-                ),
-            ),
-            false
-        ); ?>
+	"bitrix:form", 
+	"my_form", 
+	array(
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"CHAIN_ITEM_LINK" => "",
+		"CHAIN_ITEM_TEXT" => "",
+		"EDIT_ADDITIONAL" => "N",
+		"EDIT_STATUS" => "Y",
+		"IGNORE_CUSTOM_TEMPLATE" => "Y",
+		"NOT_SHOW_FILTER" => array(
+			0 => "",
+			1 => "",
+		),
+		"NOT_SHOW_TABLE" => array(
+			0 => "",
+			1 => "",
+		),
+		"RESULT_ID" => $_REQUEST[RESULT_ID],
+		"SEF_FOLDER" => "",
+		"SEF_MODE" => "Y",
+		"SHOW_ADDITIONAL" => "N",
+		"SHOW_ANSWER_VALUE" => "N",
+		"SHOW_EDIT_PAGE" => "N",
+		"SHOW_LIST_PAGE" => "N",
+		"SHOW_STATUS" => "Y",
+		"SHOW_VIEW_PAGE" => "N",
+		"START_PAGE" => "new",
+		"SUCCESS_URL" => "/thank-you",
+		"USE_EXTENDED_ERRORS" => "N",
+		"WEB_FORM_ID" => "1",
+		"COMPONENT_TEMPLATE" => "my_form",
+		"SEF_URL_TEMPLATES" => array(
+			"new" => "#WEB_FORM_ID#/",
+			"list" => "#WEB_FORM_ID#/list/",
+			"edit" => "#WEB_FORM_ID#/edit/#RESULT_ID#/",
+			"view" => "#WEB_FORM_ID#/view/#RESULT_ID#/",
+		)
+	),
+	false
+); ?>
     </div>
 </div>
 <div class="form-3">

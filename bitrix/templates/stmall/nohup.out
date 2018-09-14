@@ -1394,3 +1394,55 @@ SignalException: SIGTERM
 >>> Change detected to: sass/_template_styles.scss
       write style.css
       write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4803: ".form__message-error" failed to @extend ".form__message".
+The selector ".form__message" was not found.
+Use "@extend .form__message !optional" if the extend should be able to fail.
+)
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map
+>>> Change detected to: sass/_template_styles.scss
+      error sass/_template_styles.scss (Line 4809: Invalid CSS after "  & span": expected "}", was "{")
+>>> Change detected to: sass/_template_styles.scss
+      write style.css
+      write style.css.map

@@ -1,5 +1,6 @@
 <!--Мета-тэги для каталога-->
 <?
+
 $_SESSION['arName'] = $_SESSION['arName']." ".$_SESSION['brand_name_title'];
 $arResult['NAME'] = $_SESSION['PROD_NAME']." ".$_SESSION['brand_name_title'];
 $arResult['PRICES']['base_price']['PRINT_VALUE'] = $_SESSION['PROD_PRICE'];

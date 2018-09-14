@@ -16,6 +16,12 @@ use Bitrix\Main\ModuleManager;
 $this->setFrameMode(true);
 $this->addExternalCss("/bitrix/css/main/bootstrap.css");
 
+// if(isset($_GET["sort"]) && isset($_GET["method"]) && ($_GET["sort"] == "price"))
+//    {
+//        $arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"];
+//        $arParams["ELEMENT_SORT_ORDER"] = $_GET["method"];
+//    }
+
 if (!isset($arParams['FILTER_VIEW_MODE']) || (string)$arParams['FILTER_VIEW_MODE'] == '')
 	$arParams['FILTER_VIEW_MODE'] = 'VERTICAL';
 $arParams['USE_FILTER'] = (isset($arParams['USE_FILTER']) && $arParams['USE_FILTER'] == 'Y' ? 'Y' : 'N');

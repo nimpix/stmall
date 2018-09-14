@@ -235,6 +235,13 @@ function getFilterPath($url)
 		$b404 = true;
 	}
 
+
+		//Сортировка
+		if($_GET['sort'] == 'price'){
+		
+		}
+		//
+
 	if($componentPage == "section")
 	{
 		if (isset($arVariables["SECTION_ID"]))
@@ -242,6 +249,8 @@ function getFilterPath($url)
 		else
 			$b404 |= !isset($arVariables["SECTION_CODE"]);
 	}
+
+
 
 	if($b404 && CModule::IncludeModule('iblock'))
 	{

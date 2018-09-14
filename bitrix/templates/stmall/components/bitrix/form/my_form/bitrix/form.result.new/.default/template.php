@@ -1,6 +1,8 @@
 <?
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 ?>
+
+
 <?if ($arResult["isFormErrors"] == "Y"):?><?=$arResult["FORM_ERRORS_TEXT"];?><?endif;?>
 
 <?=$arResult["FORM_NOTE"]?>
@@ -18,7 +20,9 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 ***********************************************************************************/
 ?>
 <div class="form-table data-table">
-    <div class="form-title">Закажите звонок</div>
+	<div class="form__message-error">Имя должно быть не длиннее 15 символов</div>
+	<div class="form__message-success">Заявка успешно отправлена<br><span>Наш менеджер свяжется с вами в ближайшее время</span></div>
+   <div class="form-title">Закажите звонок<?=$arResult["SUCCESS"]?></div>
     <button class="form-close">x</button>
     <div class="form-group">
 	<?
@@ -26,10 +30,10 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 	foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion)
 	{
 	?>
-
-
 				<?if (is_array($arResult["FORM_ERRORS"]) && array_key_exists($FIELD_SID, $arResult['FORM_ERRORS'])):?>
-				<span class="error-fld" title="<?=htmlspecialcharsbx($arResult["FORM_ERRORS"][$FIELD_SID])?>"></span>
+				<span class="error-fld" title="<?=htmlspecialcharsbx($arResult["FORM_ERRORS"][$FIELD_SID])?>"></span> 
+				<? return false;
+				?>
 				<?endif;?>
                  <label for="input<?=$formcount?>"><?=$arQuestion["CAPTION"]?><?if ($arQuestion["REQUIRED"] == "Y"):?><?=$arResult["REQUIRED_SIGN"];?><?endif;?></label>
 				<?=$arQuestion["IS_INPUT_CAPTION_IMAGE"] == "Y" ? "<br />".$arQuestion["IMAGE"]["HTML_CODE"] : ""?>
